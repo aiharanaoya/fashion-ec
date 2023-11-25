@@ -7,9 +7,9 @@
     "build": "next build",
     "start": "next start",
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,scss}'",
-    "lintjs": "eslint './src/**/*.{js,jsx,ts,tsx}'",
-    "lintjs:fix": "eslint --fix './src/**/*.{js,jsx,ts,tsx}'",
-    "linthtml": "markuplint './src/**/*.{jsx,tsx}'"
+    "lintjs": "eslint './**/*.{js,jsx,ts,tsx}'",
+    "lintjs:fix": "eslint --fix './**/*.{js,jsx,ts,tsx}'",
+    "linthtml": "markuplint './**/*.{jsx,tsx}'"
   },
   "dependencies": {
     "next": "14.0.3",
