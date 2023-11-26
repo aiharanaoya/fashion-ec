@@ -30,7 +30,14 @@ export const Button: FC<Props> = ({
   return (
     <button
       type={type}
-      className="flex h-full w-full items-center justify-center rounded border border-black bg-black p-2 text-white duration-300 hover:bg-white hover:text-black"
+      className="
+        flex h-full w-full
+        items-center justify-center
+        rounded border border-black
+        bg-black p-2 text-white
+        duration-300
+        hover:bg-white hover:text-black
+      "
       disabled={isDisabled}
       onClick={onClick}
     >
