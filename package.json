@@ -11,7 +11,7 @@
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,scss}'",
     "lintjs": "eslint './**/*.{js,jsx,ts,tsx}'",
     "lintjs:fix": "eslint --fix './**/*.{js,jsx,ts,tsx}'",
-    "linthtml": "markuplint './**/*.{jsx,tsx}'"
+    "linthtml": "markuplint './app/**/*.{jsx,tsx}'"
   },
   "dependencies": {
     "next": "14.0.3",
