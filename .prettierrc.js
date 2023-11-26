@@ -1,4 +1,5 @@
 module.exports = {
+  plugins: ['prettier-plugin-tailwindcss'],
   // セミコロン必須
   semi: true,
   // 文字列をシングルクォートにする
