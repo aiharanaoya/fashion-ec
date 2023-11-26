@@ -28,7 +28,12 @@ export const Button: FC<Props> = ({
   onClick
 }: Props) => {
   return (
-    <button type={type} className="" disabled={isDisabled} onClick={onClick}>
+    <button
+      type={type}
+      className="flex justify-center items-center w-full h-full bg-black text-white rounded p-2 border border-black hover:bg-white hover:text-black duration-300"
+      disabled={isDisabled}
+      onClick={onClick}
+    >
       {children}
     </button>
   );
