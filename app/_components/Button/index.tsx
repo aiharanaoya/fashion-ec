@@ -14,12 +14,11 @@ export const Button: FC<Props> = ({ children, ...rest }: Props) => {
     <button
       {...rest}
       className="
-        flex h-full w-full
-        items-center justify-center
+        flex h-full w-full items-center justify-center
         rounded border border-slate-800
-        bg-slate-800 p-2 text-white
-        duration-300
-        hover:bg-white hover:text-slate-800
+        bg-slate-800 p-2 text-white duration-300
+        enabled:hover:bg-white enabled:hover:text-slate-800
+        disabled:opacity-30
       "
     >
       {children}
