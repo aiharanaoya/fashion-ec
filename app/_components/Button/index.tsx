@@ -1,45 +1,25 @@
-import { FC, MouseEventHandler, ReactNode } from 'react';
-
-export const BUTTON_TYPE = {
-  SUBMIT: 'submit',
-  BUTTON: 'button'
-} as const;
-
-export type ButtonType = (typeof BUTTON_TYPE)[keyof typeof BUTTON_TYPE];
+import { ComponentProps, FC, ReactNode } from 'react';
 
 type Props = {
-  /** ボタン内に表示させる要素 */
+  /** children */
   children: ReactNode;
-  /** ボタンのタイプ */
-  type?: ButtonType;
-  /** 非活性か */
-  isDisabled?: boolean;
-  /** クリック時の処理 */
-  onClick?: MouseEventHandler<HTMLButtonElement>;
-};
+  /** component props */
+} & ComponentProps<'button'>;
 
 /**
  * ボタン
  */
-export const Button: FC<Props> = ({
-  children,
-  type = BUTTON_TYPE.SUBMIT,
-  isDisabled = false,
-  onClick
-}: Props) => {
+export const Button: FC<Props> = ({ children, ...rest }: Props) => {
   return (
     <button
-      type={type}
+      {...rest}
       className="
-        flex h-full w-full
-        items-center justify-center
-        rounded border border-black
-        bg-black p-2 text-white
-        duration-300
-        hover:bg-white hover:text-black
+        flex h-full w-full items-center justify-center
+        rounded border border-slate-800
+        bg-slate-800 p-2 text-white duration-300
+        enabled:hover:bg-white enabled:hover:text-slate-800
+        disabled:opacity-30
       "
-      disabled={isDisabled}
-      onClick={onClick}
     >
       {children}
     </button>
