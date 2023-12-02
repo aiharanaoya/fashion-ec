@@ -1,6 +1,6 @@
 import { Meta as _Meta, StoryObj } from '@storybook/react';
 
-import { Button, BUTTON_TYPE } from '.';
+import { Button } from '.';
 
 type Meta = _Meta<typeof Button>;
 type Story = StoryObj<typeof Button>;
@@ -9,19 +9,19 @@ export default {
   component: Button,
   args: {
     children: 'Button',
-    type: BUTTON_TYPE.SUBMIT,
-    onClick: () => {}
+    disabled: false,
+    onClick: () => {
+      console.log('button click');
+    }
   }
 } as Meta;
 
 export const Default: Story = {
-  args: {
-    isDisabled: false
-  }
+  args: {}
 };
 
 export const Disabled: Story = {
   args: {
-    isDisabled: true
+    disabled: true
   }
 };
