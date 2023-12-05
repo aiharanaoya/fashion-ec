@@ -15,7 +15,7 @@ export const InputText: FC<Props> = (props: Props) => {
     <input
       {...props}
       className="
-        flex h-full w-full items-center justify-center
+        h-full w-full
         rounded-lg border border-slate-300 p-4
         outline-none duration-300 focus:border-slate-800
         disabled:opacity-30
