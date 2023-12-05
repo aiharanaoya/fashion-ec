@@ -8,7 +8,7 @@ type Story = StoryObj<typeof H3>;
 export default {
   component: H3,
   args: {
-    text: '見出し'
+    text: '見出し3'
   }
 } as Meta;
 
