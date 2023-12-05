@@ -17,8 +17,9 @@ export const InputText: FC<Props> = (props: Props) => {
       className="
         h-full w-full
         rounded-lg border border-slate-300 p-4
-        outline-none duration-300 focus:border-slate-800
-        disabled:opacity-30
+        outline-none duration-300 
+        placeholder:text-slate-400
+        focus:border-slate-800 disabled:opacity-30
       "
       aria-label="input text"
     />
