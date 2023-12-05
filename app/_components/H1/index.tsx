@@ -6,8 +6,8 @@ type Props = {
 };
 
 /**
- * h1
+ * 見出し1
  */
 export const H1: FC<Props> = ({ text }: Props) => {
-  return <h1 className={'text-4xl font-bold text-slate-800'}>{text}</h1>;
+  return <h1 className="text-4xl font-bold">{text}</h1>;
 };

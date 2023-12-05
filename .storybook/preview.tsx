@@ -1,5 +1,6 @@
 import './../app/_styles/globals.css';
 
+import React from 'react';
 import type { Preview } from '@storybook/react';
 
 const preview: Preview = {
@@ -11,7 +12,14 @@ const preview: Preview = {
         date: /Date$/i
       }
     }
-  }
+  },
+  decorators: [
+    (Story) => (
+      <div className="text-slate-800">
+        <Story />
+      </div>
+    )
+  ]
 };
 
 export default preview;
