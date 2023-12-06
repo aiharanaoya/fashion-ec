@@ -1,25 +1,31 @@
 import { ComponentProps, FC, ReactNode } from 'react';
+import { twMerge } from 'tailwind-merge';
 
 type Props = {
   /** children */
   children: ReactNode;
+  /** primaryか */
+  isPrimary?: boolean;
   /** component props */
-} & ComponentProps<'button'>;
+} & Pick<ComponentProps<'button'>, 'type' | 'disabled' | 'onClick'>;
 
 /**
  * ボタン
  */
-export const Button: FC<Props> = ({ children, ...rest }: Props) => {
+export const Button: FC<Props> = ({ isPrimary = false, children, ...rest }: Props) => {
   return (
     <button
       {...rest}
-      className="
-        flex h-full w-full items-center justify-center
+      className={twMerge(
+        `flex h-full w-full items-center justify-center
         rounded border border-slate-800
-        bg-slate-800 p-2 text-white duration-300
-        enabled:hover:bg-white enabled:hover:text-slate-800
-        disabled:opacity-30
-      "
+        bg-white p-3 text-slate-800 duration-300
+        enabled:hover:bg-slate-800 enabled:hover:text-white
+        disabled:bg-slate-800 disabled:text-white disabled:opacity-30`,
+        isPrimary &&
+          `bg-slate-800 text-white 
+          enabled:hover:bg-white enabled:hover:text-slate-800`
+      )}
     >
       {children}
     </button>

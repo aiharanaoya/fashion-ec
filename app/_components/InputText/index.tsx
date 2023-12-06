@@ -1,5 +1,5 @@
-import { clsx } from 'clsx';
 import { ComponentProps, FC } from 'react';
+import { twMerge } from 'tailwind-merge';
 
 type Props = {
   /** エラーか */
@@ -17,7 +17,7 @@ export const InputText: FC<Props> = ({ isError = false, ...rest }) => {
   return (
     <input
       {...rest}
-      className={clsx(
+      className={twMerge(
         `h-full w-full
         rounded-lg border border-slate-300 p-4
         outline-none duration-300 

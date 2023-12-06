@@ -20,6 +20,12 @@ export const Default: Story = {
   args: {}
 };
 
+export const Primary: Story = {
+  args: {
+    isPrimary: true
+  }
+};
+
 export const Disabled: Story = {
   args: {
     disabled: true
