@@ -26,15 +26,8 @@ export const Primary: Story = {
   }
 };
 
-export const SecondaryDisabled: Story = {
+export const Disabled: Story = {
   args: {
-    disabled: true
-  }
-};
-
-export const PrimaryDisabled: Story = {
-  args: {
-    isPrimary: true,
     disabled: true
   }
 };
