@@ -22,30 +22,6 @@ export const Default: Story = {
   args: {}
 };
 
-export const Number: Story = {
-  args: {
-    type: 'number'
-  }
-};
-
-export const EMail: Story = {
-  args: {
-    type: 'email'
-  }
-};
-
-export const Tel: Story = {
-  args: {
-    type: 'tel'
-  }
-};
-
-export const Password: Story = {
-  args: {
-    type: 'tel'
-  }
-};
-
 export const Disabled: Story = {
   args: {
     value: 'disabled',
