@@ -4,7 +4,7 @@ type Props = {
   /** children */
   children: ReactNode;
   /** component props */
-} & ComponentProps<'button'>;
+} & Pick<ComponentProps<'button'>, 'type' | 'disabled' | 'onClick'>;
 
 /**
  * ボタン
