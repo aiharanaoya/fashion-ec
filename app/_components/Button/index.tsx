@@ -19,7 +19,7 @@ export const Button: FC<Props> = ({ isPrimary = false, children, ...rest }: Prop
       className={twMerge(
         `flex h-full w-full items-center justify-center
         rounded border border-slate-800
-        bg-white p-2 text-slate-800 duration-300
+        bg-white p-3 text-slate-800 duration-300
         enabled:hover:bg-slate-800 enabled:hover:text-white
         disabled:opacity-30`,
         isPrimary && `bg-slate-800 text-white enabled:hover:bg-white enabled:hover:text-slate-800`
