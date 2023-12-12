@@ -18,7 +18,7 @@ export const Header: FC = () => {
     >
       <Logo />
       <div className="flex items-center gap-x-2">
-        <div className="w-80">
+        <div className="w-80 text-sm">
           <FormSearch value="" onChangeForm={() => {}} onClickButton={() => {}} />
         </div>
         <div className="flex items-center gap-x-1">
