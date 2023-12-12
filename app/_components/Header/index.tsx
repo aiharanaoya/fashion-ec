@@ -1,4 +1,5 @@
 import { HeartIcon, ShoppingCartIcon, UserIcon } from '@heroicons/react/24/outline';
+import Link from 'next/link';
 import { FC } from 'react';
 
 import { FormSearch } from '@/_components/FormSearch';
@@ -16,7 +17,9 @@ export const Header: FC = () => {
         border-b border-slate-300 px-8 py-2
       "
     >
-      <Logo />
+      <Link href="/" className="duration-300 hover:opacity-70">
+        <Logo />
+      </Link>
       <div className="flex items-center gap-x-2">
         <div className="w-80 text-sm">
           <FormSearch value="" onChangeForm={() => {}} onClickButton={() => {}} />
