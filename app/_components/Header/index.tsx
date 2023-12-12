@@ -22,13 +22,13 @@ export const Header: FC = () => {
           <FormSearch value="" onChangeForm={() => {}} onClickButton={() => {}} />
         </div>
         <div className="flex items-center gap-x-1">
-          <IconButton>
+          <IconButton onClick={() => {}}>
             <HeartIcon className="w-6" />
           </IconButton>
-          <IconButton>
+          <IconButton onClick={() => {}}>
             <ShoppingCartIcon className="w-6" />
           </IconButton>
-          <IconButton>
+          <IconButton onClick={() => {}}>
             <UserIcon className="w-6" />
           </IconButton>
         </div>
