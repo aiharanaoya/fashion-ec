@@ -51,7 +51,7 @@ export const Header: FC = () => {
         <Logo />
       </Link>
       <div className="flex items-center gap-x-2">
-        <div className="w-80 text-sm">
+        <div className="w-96 text-sm">
           <FormSearch
             value={searchValue}
             onChangeForm={changeFormSearch}
