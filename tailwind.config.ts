@@ -2,7 +2,13 @@ import type { Config } from 'tailwindcss';
 
 const config: Config = {
   content: ['./app/**/*.{js,ts,jsx,tsx}', './.storybook/preview.tsx'],
-  theme: {},
+  theme: {
+    extend: {
+      aspectRatio: {
+        cinema: '12 / 5'
+      }
+    }
+  },
   plugins: []
 };
 
