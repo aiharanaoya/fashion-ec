@@ -1,5 +1,6 @@
 'use client';
 
+import Autoplay from 'embla-carousel-autoplay';
 import useEmblaCarousel from 'embla-carousel-react';
 import Image from 'next/image';
 import { FC, useEffect, useState } from 'react';
@@ -17,7 +18,7 @@ type Props = {
  * カルーセル
  */
 export const Carousel: FC<Props> = ({ images }: Props) => {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay()]);
 
   /** 選択中のインデックス */
   const [selectedIndex, setSelectedIndex] = useState(0);
