@@ -25,12 +25,12 @@ export const Carousel: FC<Props> = ({ images }: Props) => {
 
   /** 進むボタン押下時処理 */
   const handleClickPrev = () => {
-    emblaApi?.scrollNext();
+    emblaApi?.scrollPrev();
   };
 
   /** 戻るボタン押下時処理 */
   const handleClickNext = () => {
-    emblaApi?.scrollPrev();
+    emblaApi?.scrollNext();
   };
 
   /** ⚪︎ボタン押下時処理 */
