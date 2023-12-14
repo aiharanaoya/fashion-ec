@@ -1,10 +1,24 @@
-import { Button } from '@/_components/Button';
+import { Carousel } from '@/_components/Carousel';
 
 export default function Home() {
   return (
-    <main>
-      <h1>nextjs</h1>
-      <Button>button</Button>
+    <main className="p-8">
+      <Carousel
+        images={[
+          {
+            src: '/dummy-image.png',
+            alt: ''
+          },
+          {
+            src: '/dummy-image.png',
+            alt: ''
+          },
+          {
+            src: '/dummy-image.png',
+            alt: ''
+          }
+        ]}
+      />
     </main>
   );
 }
