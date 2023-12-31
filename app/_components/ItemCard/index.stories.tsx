@@ -12,7 +12,7 @@ export default {
       src: 'https://picsum.photos/1600/900',
       alt: ''
     },
-    name: 'アイテム名',
+    name: 'アイテム名アイテム名アイテム名',
     price: 5000
   }
 } as Meta;
