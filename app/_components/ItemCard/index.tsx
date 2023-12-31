@@ -18,7 +18,7 @@ type Props = {
  */
 export const ItemCard: FC<Props> = ({ image, name, price }: Props) => {
   return (
-    <div className="flex flex-col rounded-2xl shadow">
+    <div className="flex flex-col rounded-2xl shadow-lg">
       <div className="relative aspect-[9/10] h-full w-full">
         <Image className="rounded-t-2xl object-cover" src={image.src} alt={image.alt} fill />
       </div>
