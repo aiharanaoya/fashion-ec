@@ -112,6 +112,51 @@ export default function Page() {
             </li>
           </ul>
         </section>
+        <section className="flex flex-col gap-y-4">
+          <H2 text="ランキング" />
+          <ul className="flex w-full gap-x-4">
+            <li className="w-full">
+              <ItemCard
+                image={{
+                  src: '/dummy-image.png',
+                  alt: ''
+                }}
+                name="アイテム名"
+                price={5000}
+              />
+            </li>
+            <li className="w-full">
+              <ItemCard
+                image={{
+                  src: '/dummy-image.png',
+                  alt: ''
+                }}
+                name="アイテム名"
+                price={5000}
+              />
+            </li>
+            <li className="w-full">
+              <ItemCard
+                image={{
+                  src: '/dummy-image.png',
+                  alt: ''
+                }}
+                name="アイテム名"
+                price={5000}
+              />
+            </li>
+            <li className="w-full">
+              <ItemCard
+                image={{
+                  src: '/dummy-image.png',
+                  alt: ''
+                }}
+                name="アイテム名"
+                price={5000}
+              />
+            </li>
+          </ul>
+        </section>
       </div>
     </main>
   );
