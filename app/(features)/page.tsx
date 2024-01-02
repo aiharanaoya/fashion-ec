@@ -21,9 +21,54 @@ export default function Page() {
           }
         ]}
       />
-      <div className="h-full w-full max-w-5xl">
-        <section className="flex flex-col gap-y-5">
+      <div className="flex h-full w-full max-w-5xl flex-col gap-y-16">
+        <section className="flex flex-col gap-y-4">
           <H2 text="新着アイテム" />
+          <ul className="flex w-full gap-x-4">
+            <li className="w-full">
+              <ItemCard
+                image={{
+                  src: '/dummy-image.png',
+                  alt: ''
+                }}
+                name="アイテム名"
+                price={5000}
+              />
+            </li>
+            <li className="w-full">
+              <ItemCard
+                image={{
+                  src: '/dummy-image.png',
+                  alt: ''
+                }}
+                name="アイテム名"
+                price={5000}
+              />
+            </li>
+            <li className="w-full">
+              <ItemCard
+                image={{
+                  src: '/dummy-image.png',
+                  alt: ''
+                }}
+                name="アイテム名"
+                price={5000}
+              />
+            </li>
+            <li className="w-full">
+              <ItemCard
+                image={{
+                  src: '/dummy-image.png',
+                  alt: ''
+                }}
+                name="アイテム名"
+                price={5000}
+              />
+            </li>
+          </ul>
+        </section>
+        <section className="flex flex-col gap-y-4">
+          <H2 text="おすすめアイテム" />
           <ul className="flex w-full gap-x-4">
             <li className="w-full">
               <ItemCard
