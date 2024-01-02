@@ -45,7 +45,7 @@ export const Carousel: FC<Props> = ({ images }: Props) => {
   });
 
   return (
-    <div className="-mx-8 flex flex-col gap-y-4">
+    <div className="flex h-full w-full flex-col gap-y-4">
       <div className="relative overflow-hidden" ref={emblaRef}>
         <ul className="flex gap-x-4 pl-4">
           {images.map((image, index) => (
