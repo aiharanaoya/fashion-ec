@@ -41,7 +41,7 @@ export const Header: FC = () => {
   };
 
   return (
-    <div
+    <header
       className="
         flex h-full w-full items-center justify-between
         border-b border-slate-300 px-8 py-2
@@ -70,6 +70,6 @@ export const Header: FC = () => {
           </IconButton>
         </div>
       </div>
-    </div>
+    </header>
   );
 };
