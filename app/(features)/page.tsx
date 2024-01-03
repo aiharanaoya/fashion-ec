@@ -4,7 +4,7 @@ import { ItemCard } from '@/_components/ItemCard';
 
 export default function Page() {
   return (
-    <main className="flex flex-col items-center gap-y-16 py-8">
+    <main className="flex flex-col items-center gap-y-16 pb-16 pt-8">
       <Carousel
         images={[
           {
