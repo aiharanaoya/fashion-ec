@@ -41,10 +41,11 @@ export const Header: FC = () => {
   };
 
   return (
-    <div
+    <header
       className="
-        flex h-full w-full items-center justify-between
-        border-b border-slate-300 px-8 py-2
+        sticky top-0 z-10 flex h-full w-full
+        items-center justify-between
+        border-b border-slate-300 bg-white px-8 py-2
       "
     >
       <Link href="/" className="duration-300 hover:opacity-70">
@@ -70,6 +71,6 @@ export const Header: FC = () => {
           </IconButton>
         </div>
       </div>
-    </div>
+    </header>
   );
 };
