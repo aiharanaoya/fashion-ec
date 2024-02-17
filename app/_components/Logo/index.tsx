@@ -7,5 +7,5 @@ export const font = Abril_Fatface({ weight: '400', subsets: ['latin'] });
  * ロゴ
  */
 export const Logo: FC = () => {
-  return <span className={`${font.className} text-3xl`}>Fashion EC</span>;
+  return <span className={`${font.className} text-2xl md:text-3xl`}>Fashion EC</span>;
 };
