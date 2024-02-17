@@ -18,6 +18,9 @@ export const useResponsive = (): Hook => {
   };
 
   useEffect(() => {
+    // 初回読み込み時
+    handleResize();
+
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
