@@ -1,6 +1,6 @@
 'use client';
 
-import { HeartIcon, ShoppingCartIcon, UserIcon } from '@heroicons/react/24/outline';
+import { ShoppingCartIcon, UserIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { ChangeEvent, FC, useState } from 'react';
 
@@ -23,11 +23,6 @@ export const Header: FC = () => {
   /** 検索処理 */
   const handleClickSearch = () => {
     console.log('検索処理');
-  };
-
-  /** お気に入りアイコン押下時処理 */
-  const handleClickFavorite = () => {
-    console.log('お気に入りアイコン押下時処理');
   };
 
   /** カートアイコン押下時処理 */
@@ -60,9 +55,6 @@ export const Header: FC = () => {
           />
         </div>
         <div className="flex items-center gap-x-1">
-          <IconButton onClick={handleClickFavorite}>
-            <HeartIcon className="w-6" />
-          </IconButton>
           <IconButton onClick={handleClickCart}>
             <ShoppingCartIcon className="w-6" />
           </IconButton>
