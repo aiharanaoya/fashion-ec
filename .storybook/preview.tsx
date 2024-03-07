@@ -1,5 +1,5 @@
-import './../app/_styles/globals.css';
-import { defaultStyle } from './../app/_styles/defaultStyle';
+import '@/styles/globals.css';
+import { defaultStyle } from './../src/styles/defaultStyle';
 
 import React from 'react';
 import type { Preview } from '@storybook/react';

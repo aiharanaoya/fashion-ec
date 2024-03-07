@@ -1,11 +1,11 @@
-import './../_styles/globals.css';
+import '@/styles/globals.css';
 
 import type { Metadata } from 'next';
 import { ReactNode } from 'react';
 
-import { Footer } from '@/_components/Footer';
-import { Header } from '@/_components/Header';
-import { defaultStyle } from '@/_styles/defaultStyle';
+import { Footer } from '@/components/Footer';
+import { Header } from '@/components/Header';
+import { defaultStyle } from '@/styles/defaultStyle';
 
 export const metadata: Metadata = {
   title: 'Fashion EC',

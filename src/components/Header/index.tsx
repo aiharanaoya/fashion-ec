@@ -4,10 +4,10 @@ import { ShoppingCartIcon, UserIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { ChangeEvent, FC, useState } from 'react';
 
-import { FormSearch } from '@/_components/FormSearch';
-import { IconButton } from '@/_components/IconButton';
-import { Logo } from '@/_components/Logo';
-import { useResponsive } from '@/_hooks/useResponsive';
+import { FormSearch } from '@/components/FormSearch';
+import { IconButton } from '@/components/IconButton';
+import { Logo } from '@/components/Logo';
+import { useResponsive } from '@/hooks/useResponsive';
 
 /**
  * ヘッダー
