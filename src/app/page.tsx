@@ -60,7 +60,6 @@ export default function Page() {
       <div className="flex h-full w-full max-w-5xl flex-col gap-y-16">
         <ItemSection headlineText="新着アイテム" itemList={dummyItemList} />
         <ItemSection headlineText="おすすめアイテム" itemList={dummyItemList} />
-        <ItemSection headlineText="ランキング" itemList={dummyItemList} />
       </div>
     </main>
   );
