@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { FC, useEffect, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { useResponsive } from '../../hooks/useResponsive';
+import { useResponsive } from '@/hooks/useResponsive';
 
 type Props = {
   /** 画像リスト */
