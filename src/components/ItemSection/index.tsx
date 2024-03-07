@@ -27,7 +27,7 @@ export const ItemSection: FC<Props> = ({ headlineText, itemList }: Props) => {
   return (
     <section className="flex flex-col gap-y-4">
       <H2 text={headlineText} />
-      <ul className="flex w-full gap-x-4">
+      <ul className="grid w-full grid-cols-2 gap-4 md:grid-cols-4">
         {itemList.map((item, index) => (
           <li className="w-full" key={`item-list-${index}`}>
             <ItemCard
