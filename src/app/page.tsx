@@ -1,6 +1,6 @@
-import { Carousel } from '@/_components/Carousel';
-import { H2 } from '@/_components/H2';
-import { ItemCard } from '@/_components/ItemCard';
+import { Carousel } from '@/components//Carousel';
+import { H2 } from '@/components/H2';
+import { ItemCard } from '@/components/ItemCard';
 
 export default function Page() {
   return (

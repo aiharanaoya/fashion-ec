@@ -1,8 +1,8 @@
 import { MagnifyingGlassIcon } from '@heroicons/react/24/solid';
 import { FC, FormEventHandler, MouseEventHandler } from 'react';
 
-import { Button } from '@/_components/Button';
-import { InputText } from '@/_components/InputText';
+import { Button } from '../Button';
+import { InputText } from '../InputText';
 
 type Props = {
   /** フォーム入力値 */
