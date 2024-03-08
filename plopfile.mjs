@@ -51,4 +51,28 @@ export default function plopConfig(
       }
     ]
   });
+  // hook
+  plop.setGenerator('hook', {
+    description: 'hookのテンプレートを作成',
+    prompts: [
+      {
+        type: 'input',
+        name: 'name',
+        message: 'hook名を入力してください（例：useProduct）',
+        validate: (value) => {
+          if (!value.startsWith('use')) {
+            return 'hook名は先頭にuseを付けるようにしてください';
+          }
+          return true;
+        }
+      }
+    ],
+    actions: [
+      {
+        type: 'add',
+        path: './src/hooks/{{camelCase name}}.ts',
+        templateFile: './.plop/hook/index.ts.hbs'
+      }
+    ]
+  });
 }
