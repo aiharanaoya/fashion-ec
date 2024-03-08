@@ -33,4 +33,22 @@ export default function plopConfig(
       }
     ]
   });
+  // page
+  plop.setGenerator('page', {
+    description: 'pageのテンプレートを作成',
+    prompts: [
+      {
+        type: 'input',
+        name: 'directory',
+        message: 'ディレクトリを入力してください（例：/my-page）'
+      }
+    ],
+    actions: [
+      {
+        type: 'add',
+        path: './src/app{{directory}}/page.tsx',
+        templateFile: './.plop/page/page.tsx.hbs'
+      }
+    ]
+  });
 }
