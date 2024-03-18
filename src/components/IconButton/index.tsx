@@ -1,10 +1,10 @@
-import { ComponentProps, FC, ReactNode } from 'react';
+import { ComponentPropsWithoutRef, FC, ReactNode } from 'react';
 
 type Props = {
   /** children */
   children: ReactNode;
   /** component props */
-} & Pick<ComponentProps<'button'>, 'onClick'>;
+} & ComponentPropsWithoutRef<'button'>;
 
 /**
  *  アイコンボタン

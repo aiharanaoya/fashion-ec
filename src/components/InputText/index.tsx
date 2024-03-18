@@ -1,14 +1,11 @@
-import { ComponentProps, FC } from 'react';
+import { ComponentPropsWithoutRef, FC } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 type Props = {
   /** エラーか */
   isError?: boolean;
   /** component props */
-} & Pick<
-  ComponentProps<'input'>,
-  'type' | 'id' | 'name' | 'value' | 'placeholder' | 'disabled' | 'required' | 'onChange'
->;
+} & ComponentPropsWithoutRef<'input'>;
 
 /**
  * インプットテキスト

@@ -1,4 +1,4 @@
-import { ComponentProps, FC, ReactNode } from 'react';
+import { ComponentPropsWithoutRef, FC, ReactNode } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 type Props = {
@@ -7,7 +7,7 @@ type Props = {
   /** primaryか */
   isPrimary?: boolean;
   /** component props */
-} & Pick<ComponentProps<'button'>, 'type' | 'disabled' | 'onClick'>;
+} & ComponentPropsWithoutRef<'button'>;
 
 /**
  * ボタン
