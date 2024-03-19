@@ -1,3 +1,7 @@
+'use client';
+
+import { useSearchParams } from 'next/navigation';
+
 import { ItemSection } from '@/components/ItemSection';
 
 export default function Page() {
@@ -85,10 +89,14 @@ export default function Page() {
     }
   ];
 
+  const searchParams = useSearchParams();
+
+  const query = searchParams.get('query');
+
   return (
     <main className="flex justify-center pb-16 pt-8">
       <div className="h-full w-full max-w-5xl px-4">
-        <ItemSection headlineText="〜〜の検索結果" itemList={dummyItemList} />
+        <ItemSection headlineText={`${query}の検索結果`} itemList={dummyItemList} />
       </div>
     </main>
   );
