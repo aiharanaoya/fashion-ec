@@ -8,12 +8,10 @@ type Story = StoryObj<typeof FormSearch>;
 export default {
   component: FormSearch,
   args: {
+    href: '',
     value: '',
     onChangeForm: () => {
       console.log('input text');
-    },
-    onClickButton: () => {
-      console.log('button click');
     }
   }
 } as Meta;

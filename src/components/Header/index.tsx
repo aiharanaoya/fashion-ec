@@ -23,11 +23,6 @@ export const Header: FC = () => {
     setSearchValue(e.target.value);
   };
 
-  /** 検索処理 */
-  const handleClickSearch = () => {
-    console.log('検索処理');
-  };
-
   /** カートアイコン押下時処理 */
   const handleClickCart = () => {
     console.log('カートアイコン押下時処理');
@@ -52,9 +47,9 @@ export const Header: FC = () => {
       <div className="flex items-center gap-x-2">
         <div className="w-96 text-sm">
           <FormSearch
+            href={`/search?query=${searchValue}`}
             value={searchValue}
             onChangeForm={changeFormSearch}
-            onClickButton={handleClickSearch}
           />
         </div>
         <div className="flex items-center gap-x-1">
@@ -90,9 +85,9 @@ export const Header: FC = () => {
       </div>
       <div className="w-full text-sm">
         <FormSearch
+          href={`/search?query=${searchValue}`}
           value={searchValue}
           onChangeForm={changeFormSearch}
-          onClickButton={handleClickSearch}
         />
       </div>
     </header>
