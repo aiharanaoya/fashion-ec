@@ -46,7 +46,11 @@ export const Header: FC = () => {
       </Link>
       <div className="flex items-center gap-x-2">
         <div className="w-96 text-sm">
-          <FormSearch href="/search" value={searchValue} onChangeForm={changeFormSearch} />
+          <FormSearch
+            href={`/search?query=${searchValue}`}
+            value={searchValue}
+            onChangeForm={changeFormSearch}
+          />
         </div>
         <div className="flex items-center gap-x-1">
           <IconButton onClick={handleClickCart}>
@@ -80,7 +84,11 @@ export const Header: FC = () => {
         </div>
       </div>
       <div className="w-full text-sm">
-        <FormSearch href="/search" value={searchValue} onChangeForm={changeFormSearch} />
+        <FormSearch
+          href={`/search?query=${searchValue}`}
+          value={searchValue}
+          onChangeForm={changeFormSearch}
+        />
       </div>
     </header>
   );
