@@ -6,8 +6,6 @@ import Image from 'next/image';
 import { FC, useEffect, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { useResponsive } from '@/hooks/useResponsive';
-
 type Props = {
   /** 画像リスト */
   images: {
@@ -20,8 +18,6 @@ type Props = {
  * カルーセル
  */
 export const Carousel: FC<Props> = ({ images }: Props) => {
-  const { isPc } = useResponsive();
-
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay()]);
 
   /** 選択中のインデックス */
@@ -64,30 +60,26 @@ export const Carousel: FC<Props> = ({ images }: Props) => {
             </li>
           ))}
         </ul>
-        {isPc && (
-          <button
-            className="
-          absolute inset-y-0 left-[10%] my-auto h-12 w-12 rounded-full 
+        <button
+          className="
+          absolute inset-y-0 left-[10%] my-auto hidden h-12 w-12 rounded-full
           bg-white font-bold text-slate-400 shadow duration-300
-          hover:h-14 hover:w-14
+          hover:h-14 hover:w-14 md:block
         "
-            onClick={handleClickPrev}
-          >
-            ＜
-          </button>
-        )}
-        {isPc && (
-          <button
-            className="
-          absolute inset-y-0 right-[10%] my-auto h-12 w-12 rounded-full 
+          onClick={handleClickPrev}
+        >
+          ＜
+        </button>
+        <button
+          className="
+          absolute inset-y-0 right-[10%] my-auto hidden h-12 w-12 rounded-full
         bg-white font-bold text-slate-400 shadow duration-300
-          hover:h-14 hover:w-14
+          hover:h-14 hover:w-14 md:block
         "
-            onClick={handleClickNext}
-          >
-            ＞
-          </button>
-        )}
+          onClick={handleClickNext}
+        >
+          ＞
+        </button>
       </div>
       <ul className="flex justify-center gap-x-3">
         {images.map((_, index) => (
