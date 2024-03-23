@@ -8,10 +8,10 @@ import { twMerge } from 'tailwind-merge';
 
 type Props = {
   /** 画像リスト */
-  images: {
+  images: Array<{
     src: string;
     alt: string;
-  }[];
+  }>;
 };
 
 /**
