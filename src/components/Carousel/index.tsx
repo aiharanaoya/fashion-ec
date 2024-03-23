@@ -6,12 +6,11 @@ import Image from 'next/image';
 import { FC, useEffect, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 
+import type { ImageItem } from '@/types/item';
+
 type Props = {
   /** 画像リスト */
-  images: Array<{
-    src: string;
-    alt: string;
-  }>;
+  images: Array<ImageItem>;
 };
 
 /**
