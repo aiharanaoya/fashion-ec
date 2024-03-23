@@ -1,58 +1,10 @@
 import { Carousel } from '@/components//Carousel';
 import { ItemSection } from '@/components/ItemSection';
+import { dummyCarouselImageList, dummyListItem } from '@/constants/dummy';
 
 export default function Page() {
-  /** ダミーカルーセル画像リスト */
-  const dummyCarouselImageList = [
-    {
-      src: '/dummy-image.png',
-      alt: ''
-    },
-    {
-      src: '/dummy-image.png',
-      alt: ''
-    },
-    {
-      src: '/dummy-image.png',
-      alt: ''
-    }
-  ];
-
   /** ダミーアイテムリスト */
-  const dummyItemList = [
-    {
-      image: {
-        src: '/dummy-image.png',
-        alt: ''
-      },
-      name: 'アイテム名アイテム名アイテム名',
-      price: 5000
-    },
-    {
-      image: {
-        src: '/dummy-image.png',
-        alt: ''
-      },
-      name: 'アイテム名アイテム名アイテム名',
-      price: 5000
-    },
-    {
-      image: {
-        src: '/dummy-image.png',
-        alt: ''
-      },
-      name: 'アイテム名アイテム名アイテム名',
-      price: 5000
-    },
-    {
-      image: {
-        src: '/dummy-image.png',
-        alt: ''
-      },
-      name: 'アイテム名アイテム名アイテム名',
-      price: 5000
-    }
-  ];
+  const dummyItemList = new Array(4).fill(dummyListItem);
 
   return (
     <main className="flex flex-col items-center gap-y-16 pb-16 pt-8">
