@@ -4,91 +4,11 @@ import { useSearchParams } from 'next/navigation';
 import { FC, Suspense } from 'react';
 
 import { ItemSection } from '@/components/ItemSection';
+import { dummyListItem } from '@/constants/dummy';
 
 export default function Page() {
   /** ダミーアイテムリスト */
-  const dummyItemList = [
-    {
-      image: {
-        src: '/dummy-image.png',
-        alt: ''
-      },
-      name: 'アイテム名アイテム名アイテム名',
-      price: 5000
-    },
-    {
-      image: {
-        src: '/dummy-image.png',
-        alt: ''
-      },
-      name: 'アイテム名アイテム名アイテム名',
-      price: 5000
-    },
-    {
-      image: {
-        src: '/dummy-image.png',
-        alt: ''
-      },
-      name: 'アイテム名アイテム名アイテム名',
-      price: 5000
-    },
-    {
-      image: {
-        src: '/dummy-image.png',
-        alt: ''
-      },
-      name: 'アイテム名アイテム名アイテム名',
-      price: 5000
-    },
-    {
-      image: {
-        src: '/dummy-image.png',
-        alt: ''
-      },
-      name: 'アイテム名アイテム名アイテム名',
-      price: 5000
-    },
-    {
-      image: {
-        src: '/dummy-image.png',
-        alt: ''
-      },
-      name: 'アイテム名アイテム名アイテム名',
-      price: 5000
-    },
-    {
-      image: {
-        src: '/dummy-image.png',
-        alt: ''
-      },
-      name: 'アイテム名アイテム名アイテム名',
-      price: 5000
-    },
-    {
-      image: {
-        src: '/dummy-image.png',
-        alt: ''
-      },
-      name: 'アイテム名アイテム名アイテム名',
-      price: 5000
-    },
-    {
-      image: {
-        src: '/dummy-image.png',
-        alt: ''
-      },
-      name: 'アイテム名アイテム名アイテム名',
-      price: 5000
-    },
-    {
-      image: {
-        src: '/dummy-image.png',
-        alt: ''
-      },
-      name: 'アイテム名アイテム名アイテム名',
-      price: 5000
-    }
-  ];
+  const dummyItemList = new Array(10).fill(dummyListItem);
 
   /** 検索結果セクション */
   const ResultSection: FC = () => {
