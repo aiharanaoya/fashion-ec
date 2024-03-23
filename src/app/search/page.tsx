@@ -23,12 +23,12 @@ export default function Page() {
   };
 
   return (
-    <main className="flex justify-center py-16 pt-8">
+    <div className="flex justify-center py-16 pt-8">
       <div className="h-full w-full max-w-5xl px-4">
         <Suspense fallback={<p>loading</p>}>
           <ResultSection />
         </Suspense>
       </div>
-    </main>
+    </div>
   );
 }
