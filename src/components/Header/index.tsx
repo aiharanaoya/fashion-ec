@@ -2,6 +2,7 @@
 
 import { ShoppingCartIcon, UserIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { ChangeEvent, FC, useState } from 'react';
 
 import { Button } from '@/components/Button';
@@ -14,6 +15,8 @@ import { isLogin } from '@/constants/dummy';
  * ヘッダー
  */
 export const Header: FC = () => {
+  const router = useRouter();
+
   /** 検索ワード */
   const [searchValue, setSearchValue] = useState('');
 
@@ -46,7 +49,15 @@ export const Header: FC = () => {
             </IconButton>
           </>
         ) : (
-          <Button isPrimary>ログイン</Button>
+          // TODO: Linkに直す
+          <Button
+            isPrimary
+            onClick={() => {
+              router.push('/login');
+            }}
+          >
+            ログイン
+          </Button>
         )}
       </div>
     );
