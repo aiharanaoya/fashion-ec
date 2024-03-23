@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { FC } from 'react';
 
-import { ListItem } from '@/types/item';
+import type { ListItem } from '@/types/item';
 
 type Props = ListItem;
 

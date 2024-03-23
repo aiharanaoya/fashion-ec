@@ -1,7 +1,8 @@
 import { FC } from 'react';
 
 import { H2 } from '@/components/H2';
-import { ItemCard, ListItem } from '@/components/ItemCard';
+import { ItemCard } from '@/components/ItemCard';
+import type { ListItem } from '@/types/item';
 
 type Props = {
   /** セクション名 */
