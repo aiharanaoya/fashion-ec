@@ -1,23 +1,13 @@
 import { FC } from 'react';
 
 import { H2 } from '@/components/H2';
-import { ItemCard } from '@/components/ItemCard';
+import { ItemCard, ListItem } from '@/components/ItemCard';
 
 type Props = {
   /** セクション名 */
   headlineText: string;
   /** アイテムリスト */
-  itemList: {
-    /** 画像 */
-    image: {
-      src: string;
-      alt: string;
-    };
-    /** 名前 */
-    name: string;
-    /** 価格 */
-    price: number;
-  }[];
+  itemList: Array<ListItem>;
 };
 
 /**

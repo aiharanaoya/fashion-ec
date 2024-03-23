@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import { FC } from 'react';
 
-type Props = {
+/** 一覧アイテム */
+export type ListItem = {
   /** 画像 */
   image: {
     src: string;
@@ -12,6 +13,8 @@ type Props = {
   /** 価格 */
   price: number;
 };
+
+type Props = ListItem;
 
 /**
  * アイテムカード
