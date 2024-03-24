@@ -4,8 +4,8 @@ import { useRouter } from 'next/navigation';
 import { ChangeEvent, useState } from 'react';
 
 import { Button } from '@/components/Button';
+import { FormText } from '@/components/FormText';
 import { H2 } from '@/components/H2';
-import { InputText } from '@/components/InputText';
 
 export default function Page() {
   const router = useRouter();
@@ -28,31 +28,28 @@ export default function Page() {
 
   return (
     <div className="flex h-full w-full flex-col items-center gap-y-12 px-4 py-12">
-      <form className="flex h-full w-full max-w-md flex-col gap-y-6 rounded-2xl bg-slate-100 p-12">
+      <form
+        className="
+          flex h-full w-full max-w-md flex-col gap-y-6
+          rounded-2xl bg-slate-100 p-12 shadow-lg
+        "
+      >
         <H2 text="ログイン" />
         <div className="flex flex-col gap-y-4">
-          <div className="flex flex-col gap-y-1">
-            <label className="text-sm" htmlFor="email">
-              メールアドレス
-            </label>
-            <InputText
-              value={mailAddressValue}
-              onChange={changeMailAddressValue}
-              type="email"
-              id="email"
-            />
-          </div>
-          <div className="flex flex-col gap-y-1">
-            <label className="text-sm" htmlFor="password">
-              パスワード
-            </label>
-            <InputText
-              value={passwordValue}
-              onChange={changePasswordValue}
-              type="password"
-              id="password"
-            />
-          </div>
+          <FormText
+            labelText="メールアドレス"
+            value={mailAddressValue}
+            onChange={changeMailAddressValue}
+            type="email"
+            id="email"
+          />
+          <FormText
+            labelText="パスワード"
+            value={passwordValue}
+            onChange={changePasswordValue}
+            type="password"
+            id="password"
+          />
         </div>
         <Button
           isPrimary
@@ -64,7 +61,7 @@ export default function Page() {
           ログイン
         </Button>
       </form>
-      <div className="flex h-full w-full max-w-sm flex-col gap-y-4">
+      <div className="flex h-full w-full max-w-md flex-col gap-y-4 px-12">
         <H2 text="初めてご利用の方" />
         <Button
           type="button"
