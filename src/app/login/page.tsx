@@ -54,6 +54,7 @@ export default function Page() {
         <Button
           isPrimary
           type="button"
+          // TODO: ログイン処理
           onClick={() => {
             router.push('/');
           }}
