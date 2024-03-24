@@ -2,16 +2,21 @@
 
 import { ShoppingCartIcon, UserIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { ChangeEvent, FC, useState } from 'react';
 
+import { Button } from '@/components/Button';
 import { FormSearch } from '@/components/FormSearch';
 import { IconButton } from '@/components/IconButton';
 import { Logo } from '@/components/Logo';
+import { isLogin } from '@/constants/dummy';
 
 /**
  * ヘッダー
  */
 export const Header: FC = () => {
+  const router = useRouter();
+
   /** 検索ワード */
   const [searchValue, setSearchValue] = useState('');
 
@@ -28,6 +33,34 @@ export const Header: FC = () => {
   /** ユーザーアイコン押下時処理 */
   const handleClickUser = () => {
     console.log('ユーザーアイコン押下時処理');
+  };
+
+  /** ボタンエリア */
+  const ButtonArea: FC = () => {
+    return (
+      <div className="flex items-center gap-x-1">
+        {isLogin ? (
+          <>
+            <IconButton onClick={handleClickCart}>
+              <ShoppingCartIcon className="w-6" />
+            </IconButton>
+            <IconButton onClick={handleClickUser}>
+              <UserIcon className="w-6" />
+            </IconButton>
+          </>
+        ) : (
+          // TODO: Linkに直す
+          <Button
+            isPrimary
+            onClick={() => {
+              router.push('/login');
+            }}
+          >
+            ログイン
+          </Button>
+        )}
+      </div>
+    );
   };
 
   return (
@@ -50,14 +83,7 @@ export const Header: FC = () => {
               onChangeForm={changeFormSearch}
             />
           </div>
-          <div className="flex items-center gap-x-1">
-            <IconButton onClick={handleClickCart}>
-              <ShoppingCartIcon className="w-6" />
-            </IconButton>
-            <IconButton onClick={handleClickUser}>
-              <UserIcon className="w-6" />
-            </IconButton>
-          </div>
+          <ButtonArea />
         </div>
       </header>
       <header
@@ -71,14 +97,7 @@ export const Header: FC = () => {
           <Link href="/" className="duration-300 hover:opacity-70">
             <Logo />
           </Link>
-          <div className="flex items-center gap-x-1">
-            <IconButton onClick={handleClickCart}>
-              <ShoppingCartIcon className="w-6" />
-            </IconButton>
-            <IconButton onClick={handleClickUser}>
-              <UserIcon className="w-6" />
-            </IconButton>
-          </div>
+          <ButtonArea />
         </div>
         <div className="w-full text-sm">
           <FormSearch

@@ -25,3 +25,6 @@ export const dummyListItem: ListItem = {
   name: 'アイテム名アイテム名アイテム名',
   price: 5000
 };
+
+/** ログイン状態 */
+export const isLogin = false;
