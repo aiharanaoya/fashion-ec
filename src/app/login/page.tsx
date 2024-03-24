@@ -14,8 +14,14 @@ export default function Page() {
       <form className="flex h-full w-full max-w-md flex-col gap-y-8 rounded-2xl bg-slate-100 p-12">
         <H2 text="ログイン" />
         <div className="flex flex-col gap-y-4">
-          <InputText value={0} onChange={() => {}} />
-          <InputText value={0} onChange={() => {}} />
+          <div className="flex flex-col gap-y-1">
+            <p className="text-sm">メールアドレス</p>
+            <InputText value={0} onChange={() => {}} />
+          </div>
+          <div className="flex flex-col gap-y-1">
+            <p className="text-sm">パスワード</p>
+            <InputText value={0} onChange={() => {}} />
+          </div>
         </div>
         <Button
           isPrimary
