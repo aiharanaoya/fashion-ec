@@ -4,8 +4,8 @@ import { useRouter } from 'next/navigation';
 import { ChangeEvent, useState } from 'react';
 
 import { Button } from '@/components/Button';
+import { FormText } from '@/components/FormText';
 import { H2 } from '@/components/H2';
-import { InputText } from '@/components/InputText';
 
 export default function Page() {
   const router = useRouter();
@@ -36,28 +36,20 @@ export default function Page() {
       >
         <H2 text="ログイン" />
         <div className="flex flex-col gap-y-4">
-          <div className="flex flex-col gap-y-1">
-            <label className="text-sm" htmlFor="email">
-              メールアドレス
-            </label>
-            <InputText
-              value={mailAddressValue}
-              onChange={changeMailAddressValue}
-              type="email"
-              id="email"
-            />
-          </div>
-          <div className="flex flex-col gap-y-1">
-            <label className="text-sm" htmlFor="password">
-              パスワード
-            </label>
-            <InputText
-              value={passwordValue}
-              onChange={changePasswordValue}
-              type="password"
-              id="password"
-            />
-          </div>
+          <FormText
+            labelText="メールアドレス"
+            value={mailAddressValue}
+            onChange={changeMailAddressValue}
+            type="email"
+            id="email"
+          />
+          <FormText
+            labelText="パスワード"
+            value={passwordValue}
+            onChange={changePasswordValue}
+            type="password"
+            id="password"
+          />
         </div>
         <Button
           isPrimary
