@@ -7,7 +7,7 @@ import { ChangeEvent, FC, useState } from 'react';
 
 import { Button } from '@/components/Button';
 import { FormSearch } from '@/components/FormSearch';
-import { IconButton } from '@/components/IconButton';
+import { IconLinkButton } from '@/components/IconLinkButton';
 import { Logo } from '@/components/Logo';
 import { isLogin } from '@/constants/dummy';
 
@@ -25,28 +25,18 @@ export const Header: FC = () => {
     setSearchValue(e.target.value);
   };
 
-  /** カートアイコン押下時処理 */
-  const handleClickCart = () => {
-    console.log('カートアイコン押下時処理');
-  };
-
-  /** ユーザーアイコン押下時処理 */
-  const handleClickUser = () => {
-    console.log('ユーザーアイコン押下時処理');
-  };
-
   /** ボタンエリア */
   const ButtonArea: FC = () => {
     return (
       <div className="flex items-center gap-x-1">
         {isLogin ? (
           <>
-            <IconButton onClick={handleClickCart}>
+            <IconLinkButton href="/">
               <ShoppingCartIcon className="w-6" />
-            </IconButton>
-            <IconButton onClick={handleClickUser}>
+            </IconLinkButton>
+            <IconLinkButton href="/">
               <UserIcon className="w-6" />
-            </IconButton>
+            </IconLinkButton>
           </>
         ) : (
           // TODO: Linkに直す

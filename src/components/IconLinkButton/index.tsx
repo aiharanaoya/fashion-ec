@@ -1,17 +1,18 @@
+import Link from 'next/link';
 import { ComponentPropsWithoutRef, FC, ReactNode } from 'react';
 
 type Props = {
   /** children */
   children: ReactNode;
   /** component props */
-} & ComponentPropsWithoutRef<'button'>;
+} & ComponentPropsWithoutRef<typeof Link>;
 
 /**
- *  アイコンボタン
+ *  アイコンリンクボタン
  */
-export const IconButton: FC<Props> = ({ children, ...rest }: Props) => {
+export const IconLinkButton: FC<Props> = ({ children, ...rest }: Props) => {
   return (
-    <button
+    <Link
       {...rest}
       className="
         h-fit w-fit rounded-full p-3 duration-300
@@ -19,6 +20,6 @@ export const IconButton: FC<Props> = ({ children, ...rest }: Props) => {
       "
     >
       {children}
-    </button>
+    </Link>
   );
 };
