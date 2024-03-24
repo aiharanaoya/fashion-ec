@@ -24,6 +24,13 @@ export const Default: Story = {
   args: {}
 };
 
+export const Disabled: Story = {
+  args: {
+    value: 'disabled',
+    disabled: true
+  }
+};
+
 export const Required: Story = {
   args: {
     required: true
