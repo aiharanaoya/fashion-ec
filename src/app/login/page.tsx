@@ -32,12 +32,26 @@ export default function Page() {
         <H2 text="ログイン" />
         <div className="flex flex-col gap-y-4">
           <div className="flex flex-col gap-y-1">
-            <p className="text-sm">メールアドレス</p>
-            <InputText value={mailAddressValue} onChange={changeMailAddressValue} type="email" />
+            <label className="text-sm" htmlFor="email">
+              メールアドレス
+            </label>
+            <InputText
+              value={mailAddressValue}
+              onChange={changeMailAddressValue}
+              type="email"
+              id="email"
+            />
           </div>
           <div className="flex flex-col gap-y-1">
-            <p className="text-sm">パスワード</p>
-            <InputText value={passwordValue} onChange={changePasswordValue} type="password" />
+            <label className="text-sm" htmlFor="password">
+              パスワード
+            </label>
+            <InputText
+              value={passwordValue}
+              onChange={changePasswordValue}
+              type="password"
+              id="password"
+            />
           </div>
         </div>
         <Button
