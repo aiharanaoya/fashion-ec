@@ -25,6 +25,7 @@ export default function Page() {
   return (
     <div className="flex justify-center py-16 pt-8">
       <div className="h-full w-full max-w-5xl px-4">
+        {/* TODO: loading部分はスケルトン作る */}
         <Suspense fallback={<p>loading</p>}>
           <ResultSection />
         </Suspense>
