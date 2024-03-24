@@ -61,7 +61,7 @@ export default function Page() {
           ログイン
         </Button>
       </form>
-      <div className="flex h-full w-full max-w-sm flex-col gap-y-4">
+      <div className="flex h-full w-full max-w-md flex-col gap-y-4 px-12">
         <H2 text="初めてご利用の方" />
         <Button
           type="button"
