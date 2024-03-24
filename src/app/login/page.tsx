@@ -6,6 +6,7 @@ import { ChangeEvent, useState } from 'react';
 import { Button } from '@/components/Button';
 import { FormText } from '@/components/FormText';
 import { H2 } from '@/components/H2';
+import { LinkButton } from '@/components/LinkButton';
 
 export default function Page() {
   const router = useRouter();
@@ -54,6 +55,7 @@ export default function Page() {
         <Button
           isPrimary
           type="button"
+          // TODO: ログイン処理
           onClick={() => {
             router.push('/');
           }}
@@ -63,14 +65,7 @@ export default function Page() {
       </form>
       <div className="flex h-full w-full max-w-md flex-col gap-y-4 px-12">
         <H2 text="初めてご利用の方" />
-        <Button
-          type="button"
-          onClick={() => {
-            console.log('会員登録画面に遷移');
-          }}
-        >
-          新規会員登録
-        </Button>
+        <LinkButton href="sign-up">新規会員登録</LinkButton>
       </div>
     </div>
   );
