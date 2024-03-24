@@ -28,7 +28,12 @@ export default function Page() {
 
   return (
     <div className="flex h-full w-full flex-col items-center gap-y-12 px-4 py-12">
-      <form className="flex h-full w-full max-w-md flex-col gap-y-6 rounded-2xl bg-slate-100 p-12">
+      <form
+        className="
+          flex h-full w-full max-w-md flex-col gap-y-6
+          rounded-2xl bg-slate-100 p-12 shadow-lg
+        "
+      >
         <H2 text="ログイン" />
         <div className="flex flex-col gap-y-4">
           <div className="flex flex-col gap-y-1">
