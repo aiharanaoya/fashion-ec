@@ -36,3 +36,9 @@ export const Required: Story = {
     required: true
   }
 };
+
+export const Error: Story = {
+  args: {
+    errorText: 'エラーテキスト'
+  }
+};
