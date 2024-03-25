@@ -10,11 +10,27 @@ import { H2 } from '@/components/H2';
 export default function Page() {
   const router = useRouter();
 
+  /** 名前入力値 */
+  const [nameValue, setNameValue] = useState('');
+
+  /** 電話番号入力値 */
+  const [telValue, setTelValue] = useState('');
+
   /** メールアドレス入力値 */
   const [mailAddressValue, setMailAddressValue] = useState('');
 
   /** パスワード入力値 */
   const [passwordValue, setPasswordValue] = useState('');
+
+  /** 名前入力処理 */
+  const changeNameValue = (e: ChangeEvent<HTMLInputElement>) => {
+    setNameValue(e.target.value);
+  };
+
+  /** 電話番号入力処理 */
+  const changeTelValue = (e: ChangeEvent<HTMLInputElement>) => {
+    setTelValue(e.target.value);
+  };
 
   /** メールアドレス入力処理 */
   const changeMailAddressValue = (e: ChangeEvent<HTMLInputElement>) => {
@@ -36,6 +52,14 @@ export default function Page() {
       >
         <H2 text="新規会員登録" />
         <div className="flex flex-col gap-y-4">
+          <FormText labelText="名前" value={nameValue} onChange={changeNameValue} id="name" />
+          <FormText
+            labelText="電話番号"
+            value={telValue}
+            onChange={changeTelValue}
+            type="tel"
+            id="tel"
+          />
           <FormText
             labelText="メールアドレス"
             value={mailAddressValue}
