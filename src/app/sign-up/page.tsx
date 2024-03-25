@@ -118,7 +118,7 @@ export default function Page() {
           type="button"
           // TODO: 入力内容を保持して入力確認画面に遷移
           onClick={() => {
-            router.push('/');
+            router.push('/sign-up/confirm');
           }}
         >
           内容確認
