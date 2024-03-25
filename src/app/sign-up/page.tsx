@@ -13,6 +13,12 @@ export default function Page() {
   /** 名前入力値 */
   const [nameValue, setNameValue] = useState('');
 
+  /** 郵便番号入力値 */
+  const [zipCodeValue, setZipCodeValue] = useState('');
+
+  /** 住所入力値 */
+  const [addressValue, setAddressValue] = useState('');
+
   /** 電話番号入力値 */
   const [telValue, setTelValue] = useState('');
 
@@ -25,6 +31,16 @@ export default function Page() {
   /** 名前入力処理 */
   const changeNameValue = (e: ChangeEvent<HTMLInputElement>) => {
     setNameValue(e.target.value);
+  };
+
+  /** 郵便番号入力処理 */
+  const changeZipCodeValue = (e: ChangeEvent<HTMLInputElement>) => {
+    setZipCodeValue(e.target.value);
+  };
+
+  /** 住所入力処理 */
+  const changeAddressValue = (e: ChangeEvent<HTMLInputElement>) => {
+    setAddressValue(e.target.value);
   };
 
   /** 電話番号入力処理 */
@@ -53,6 +69,18 @@ export default function Page() {
         <H2 text="新規会員登録" />
         <div className="flex flex-col gap-y-4">
           <FormText labelText="名前" value={nameValue} onChange={changeNameValue} id="name" />
+          <FormText
+            labelText="郵便番号"
+            value={zipCodeValue}
+            onChange={changeZipCodeValue}
+            id="zip-code"
+          />
+          <FormText
+            labelText="住所"
+            value={addressValue}
+            onChange={changeAddressValue}
+            id="address"
+          />
           <FormText
             labelText="電話番号"
             value={telValue}
