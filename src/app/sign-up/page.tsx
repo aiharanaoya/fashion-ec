@@ -68,14 +68,22 @@ export default function Page() {
       >
         <H2 text="新規会員登録" />
         <div className="flex flex-col gap-y-4">
-          <FormText labelText="名前" value={nameValue} onChange={changeNameValue} id="name" />
           <FormText
+            required
+            labelText="名前"
+            value={nameValue}
+            onChange={changeNameValue}
+            id="name"
+          />
+          <FormText
+            required
             labelText="郵便番号"
             value={zipCodeValue}
             onChange={changeZipCodeValue}
             id="zip-code"
           />
           <FormText
+            required
             labelText="住所"
             value={addressValue}
             onChange={changeAddressValue}
@@ -89,6 +97,7 @@ export default function Page() {
             id="tel"
           />
           <FormText
+            required
             labelText="メールアドレス"
             value={mailAddressValue}
             onChange={changeMailAddressValue}
@@ -96,6 +105,7 @@ export default function Page() {
             id="email"
           />
           <FormText
+            required
             labelText="パスワード"
             value={passwordValue}
             onChange={changePasswordValue}
