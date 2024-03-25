@@ -1,7 +1,7 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useId, useState } from 'react';
 
 import { Button } from '@/components/Button';
 import { FormText } from '@/components/FormText';
@@ -10,6 +10,12 @@ import { LinkButton } from '@/components/LinkButton';
 
 export default function Page() {
   const router = useRouter();
+
+  /** メールアドレスID */
+  const mailAddressId = useId();
+
+  /** パスワードID */
+  const passwordId = useId();
 
   /** メールアドレス入力値 */
   const [mailAddressValue, setMailAddressValue] = useState('');
@@ -42,14 +48,14 @@ export default function Page() {
             value={mailAddressValue}
             onChange={changeMailAddressValue}
             type="email"
-            id="email"
+            id={mailAddressId}
           />
           <FormText
             labelText="パスワード"
             value={passwordValue}
             onChange={changePasswordValue}
             type="password"
-            id="password"
+            id={passwordId}
           />
         </div>
         <Button
