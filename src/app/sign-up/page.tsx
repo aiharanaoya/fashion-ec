@@ -1,7 +1,7 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import { useState, ChangeEvent } from 'react';
+import { useState, ChangeEvent, useId } from 'react';
 
 import { Button } from '@/components/Button';
 import { FormText } from '@/components/FormText';
@@ -9,6 +9,24 @@ import { H2 } from '@/components/H2';
 
 export default function Page() {
   const router = useRouter();
+
+  /** 名前ID */
+  const nameId = useId();
+
+  /** 郵便番号ID */
+  const zipCodeId = useId();
+
+  /** 住所ID */
+  const addressId = useId();
+
+  /** 電話番号ID */
+  const telId = useId();
+
+  /** メールアドレスID */
+  const mailAddressId = useId();
+
+  /** パスワードID */
+  const passwordId = useId();
 
   /** 名前入力値 */
   const [nameValue, setNameValue] = useState('');
@@ -73,28 +91,28 @@ export default function Page() {
             labelText="名前"
             value={nameValue}
             onChange={changeNameValue}
-            id="name"
+            id={nameId}
           />
           <FormText
             required
             labelText="郵便番号"
             value={zipCodeValue}
             onChange={changeZipCodeValue}
-            id="zip-code"
+            id={zipCodeId}
           />
           <FormText
             required
             labelText="住所"
             value={addressValue}
             onChange={changeAddressValue}
-            id="address"
+            id={addressId}
           />
           <FormText
             labelText="電話番号"
             value={telValue}
             onChange={changeTelValue}
             type="tel"
-            id="tel"
+            id={telId}
           />
           <FormText
             required
@@ -102,7 +120,7 @@ export default function Page() {
             value={mailAddressValue}
             onChange={changeMailAddressValue}
             type="email"
-            id="email"
+            id={mailAddressId}
           />
           <FormText
             required
@@ -110,7 +128,7 @@ export default function Page() {
             value={passwordValue}
             onChange={changePasswordValue}
             type="password"
-            id="password"
+            id={passwordId}
           />
         </div>
         <Button
