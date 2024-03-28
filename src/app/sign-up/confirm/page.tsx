@@ -3,6 +3,7 @@
 import { useRouter } from 'next/navigation';
 
 import { Button } from '@/components/Button';
+import { ConfirmText } from '@/components/ConfirmText';
 import { H2 } from '@/components/H2';
 
 export default function Page() {
@@ -18,30 +19,12 @@ export default function Page() {
       >
         <H2 text="新規会員登録確認" />
         <div className="flex flex-col gap-y-4">
-          <div className="flex flex-col gap-y-2">
-            <p className="text-sm">名前</p>
-            <p className="text-lg font-bold">名前入力値</p>
-          </div>
-          <div className="flex flex-col gap-y-2">
-            <p className="text-sm">郵便番号</p>
-            <p className="text-lg font-bold">郵便番号入力値</p>
-          </div>
-          <div className="flex flex-col gap-y-2">
-            <p className="text-sm">住所</p>
-            <p className="text-lg font-bold">住所入力値</p>
-          </div>
-          <div className="flex flex-col gap-y-2">
-            <p className="text-sm">電話番号</p>
-            <p className="text-lg font-bold">電話番号入力値</p>
-          </div>
-          <div className="flex flex-col gap-y-2">
-            <p className="text-sm">メールアドレス</p>
-            <p className="text-lg font-bold">メールアドレス入力値</p>
-          </div>
-          <div className="flex flex-col gap-y-2">
-            <p className="text-sm">パスワード</p>
-            <p className="text-lg font-bold">パスワード入力値</p>
-          </div>
+          <ConfirmText labelText="名前" valueText="名前入力値" />
+          <ConfirmText labelText="郵便番号" valueText="郵便番号入力値" />
+          <ConfirmText labelText="住所" valueText="住所入力値" />
+          <ConfirmText labelText="電話番号" valueText="電話番号入力値" />
+          <ConfirmText labelText="メールアドレス" valueText="メールアドレス入力値" />
+          <ConfirmText labelText="パスワード" valueText="パスワード入力値" />
         </div>
         <div className="flex flex-col gap-y-2">
           <Button
