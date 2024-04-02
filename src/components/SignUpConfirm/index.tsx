@@ -41,12 +41,12 @@ export const SignUpConfirm: FC<Props> = ({
     >
       <H2 text="新規会員登録確認" />
       <div className="flex flex-col gap-y-4">
-        <ConfirmText labelText="名前" valueText="名前入力値" />
-        <ConfirmText labelText="郵便番号" valueText="郵便番号入力値" />
-        <ConfirmText labelText="住所" valueText="住所入力値" />
-        <ConfirmText labelText="電話番号" valueText="電話番号入力値" />
-        <ConfirmText labelText="メールアドレス" valueText="メールアドレス入力値" />
-        <ConfirmText labelText="パスワード" valueText="パスワード入力値" />
+        <ConfirmText labelText="名前" valueText={name} />
+        <ConfirmText labelText="郵便番号" valueText={zipCode} />
+        <ConfirmText labelText="住所" valueText={address} />
+        <ConfirmText labelText="電話番号" valueText={tel} />
+        <ConfirmText labelText="メールアドレス" valueText={mailAddress} />
+        <ConfirmText labelText="パスワード" valueText={password} />
       </div>
       <div className="flex flex-col gap-y-2">
         <Button
