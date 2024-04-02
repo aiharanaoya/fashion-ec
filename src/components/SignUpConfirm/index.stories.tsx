@@ -8,7 +8,13 @@ type Story = StoryObj<typeof SignUpConfirm>;
 export default {
   component: SignUpConfirm,
   args: {
-    text: 'テキスト'
+    name: 'name',
+    zipCode: 'zipCode',
+    address: 'address',
+    tel: 'tel',
+    mailAddress: 'mailAddress',
+    password: 'password',
+    setIsConfirm: () => {}
   }
 } as Meta;
 
