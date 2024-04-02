@@ -5,6 +5,9 @@ import { useState, ChangeEvent } from 'react';
 import { SignUpForm } from '@/components/SignUpForm';
 
 export default function Page() {
+  /** 確認画面か */
+  const [isConfirm, setIsConfirm] = useState(false);
+
   /** 名前 */
   const [name, setName] = useState('');
 
@@ -55,20 +58,25 @@ export default function Page() {
 
   return (
     <div className="flex h-full w-full flex-col items-center gap-y-12 px-4 py-12">
-      <SignUpForm
-        name={name}
-        zipCode={zipCode}
-        address={address}
-        tel={tel}
-        mailAddress={mailAddress}
-        password={password}
-        changeName={changeName}
-        changeZipCode={changeZipCode}
-        changeAddress={changeAddress}
-        changeTel={changeTel}
-        changeMailAddress={changeMailAddress}
-        changePassword={changePassword}
-      />
+      {isConfirm ? (
+        <></>
+      ) : (
+        <SignUpForm
+          name={name}
+          zipCode={zipCode}
+          address={address}
+          tel={tel}
+          mailAddress={mailAddress}
+          password={password}
+          changeName={changeName}
+          changeZipCode={changeZipCode}
+          changeAddress={changeAddress}
+          changeTel={changeTel}
+          changeMailAddress={changeMailAddress}
+          changePassword={changePassword}
+          setIsConfirm={setIsConfirm}
+        />
+      )}
     </div>
   );
 }

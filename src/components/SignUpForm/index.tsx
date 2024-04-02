@@ -1,6 +1,6 @@
 'use client';
 
-import { ChangeEvent, FC, useId } from 'react';
+import { ChangeEvent, Dispatch, FC, SetStateAction, useId } from 'react';
 
 import { Button } from '@/components/Button';
 import { FormText } from '@/components/FormText';
@@ -31,6 +31,8 @@ type Props = {
   changeMailAddress: (e: ChangeEvent<HTMLInputElement>) => void;
   /** パスワード入力処理 */
   changePassword: (e: ChangeEvent<HTMLInputElement>) => void;
+  /** 確認画面かの更新関数 */
+  setIsConfirm: Dispatch<SetStateAction<boolean>>;
 };
 
 /**
@@ -48,7 +50,8 @@ export const SignUpForm: FC<Props> = ({
   changeAddress,
   changeTel,
   changeMailAddress,
-  changePassword
+  changePassword,
+  setIsConfirm
 }: Props) => {
   /** 名前ID */
   const nameId = useId();
@@ -110,7 +113,13 @@ export const SignUpForm: FC<Props> = ({
           id={passwordId}
         />
       </div>
-      <Button isPrimary type="button" onClick={() => {}}>
+      <Button
+        isPrimary
+        type="button"
+        onClick={() => {
+          setIsConfirm(true);
+        }}
+      >
         内容確認
       </Button>
     </form>

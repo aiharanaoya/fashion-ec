@@ -19,7 +19,8 @@ export default {
     changeAddress: () => {},
     changeTel: () => {},
     changeMailAddress: () => {},
-    changePassword: () => {}
+    changePassword: () => {},
+    setIsConfirm: () => {}
   }
 } as Meta;
 
