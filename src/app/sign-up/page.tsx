@@ -2,6 +2,7 @@
 
 import { useState, ChangeEvent } from 'react';
 
+import { SignUpConfirm } from '@/components/SignUpConfirm';
 import { SignUpForm } from '@/components/SignUpForm';
 
 export default function Page() {
@@ -59,7 +60,15 @@ export default function Page() {
   return (
     <div className="flex h-full w-full flex-col items-center gap-y-12 px-4 py-12">
       {isConfirm ? (
-        <></>
+        <SignUpConfirm
+          name={name}
+          zipCode={zipCode}
+          address={address}
+          tel={tel}
+          mailAddress={mailAddress}
+          password={password}
+          setIsConfirm={setIsConfirm}
+        />
       ) : (
         <SignUpForm
           name={name}
