@@ -1,6 +1,6 @@
 'use client';
 
-import { FC } from 'react';
+import { Dispatch, FC, SetStateAction } from 'react';
 
 import { Button } from '@/components/Button';
 import { ConfirmText } from '@/components/ConfirmText';
@@ -19,6 +19,8 @@ type Props = {
   mailAddress: string;
   /** パスワード */
   password: string;
+  /** 確認画面かの更新関数 */
+  setIsConfirm: Dispatch<SetStateAction<boolean>>;
 };
 
 /**
@@ -30,7 +32,8 @@ export const SignUpConfirm: FC<Props> = ({
   address,
   tel,
   mailAddress,
-  password
+  password,
+  setIsConfirm
 }: Props) => {
   return (
     <div
@@ -59,8 +62,9 @@ export const SignUpConfirm: FC<Props> = ({
         </Button>
         <Button
           type="button"
-          // TODO: 入力内容を保持して入力画面に遷移
-          onClick={() => {}}
+          onClick={() => {
+            setIsConfirm(false);
+          }}
         >
           修正
         </Button>
