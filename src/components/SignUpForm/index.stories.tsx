@@ -8,7 +8,18 @@ type Story = StoryObj<typeof SignUpForm>;
 export default {
   component: SignUpForm,
   args: {
-    text: 'テキスト'
+    name: '',
+    zipCode: '',
+    address: '',
+    tel: '',
+    mailAddress: '',
+    password: '',
+    changeName: () => {},
+    changeZipCode: () => {},
+    changeAddress: () => {},
+    changeTel: () => {},
+    changeMailAddress: () => {},
+    changePassword: () => {}
   }
 } as Meta;
 

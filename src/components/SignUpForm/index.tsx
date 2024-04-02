@@ -1,6 +1,5 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
 import { ChangeEvent, FC, useId } from 'react';
 
 import { Button } from '@/components/Button';
@@ -51,8 +50,6 @@ export const SignUpForm: FC<Props> = ({
   changeMailAddress,
   changePassword
 }: Props) => {
-  const router = useRouter();
-
   /** 名前ID */
   const nameId = useId();
 
@@ -113,13 +110,7 @@ export const SignUpForm: FC<Props> = ({
           id={passwordId}
         />
       </div>
-      <Button
-        isPrimary
-        type="button"
-        onClick={() => {
-          router.push('/sign-up/confirm');
-        }}
-      >
+      <Button isPrimary type="button" onClick={() => {}}>
         内容確認
       </Button>
     </form>
