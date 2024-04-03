@@ -8,7 +8,14 @@ type Story = StoryObj<typeof ItemDetailCard>;
 export default {
   component: ItemDetailCard,
   args: {
-    text: 'テキスト'
+    image: {
+      src: 'https://picsum.photos/1600/900',
+      alt: ''
+    },
+    name: 'アイテム名アイテム名アイテム名',
+    price: 5000,
+    description:
+      '説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文'
   }
 } as Meta;
 
