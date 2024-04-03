@@ -35,11 +35,11 @@ export default function Page() {
   };
 
   return (
-    <div className="flex h-full w-full flex-col items-center gap-y-12 px-4 py-12">
+    <div className="flex h-full w-full flex-col items-center gap-y-12 px-6 py-12">
       <PageCard>
-        <form className="flex flex-col gap-y-6">
+        <form className="flex flex-col gap-y-8">
           <H2 text="ログイン" />
-          <div className="flex flex-col gap-y-4">
+          <div className="flex flex-col gap-y-6">
             <FormText
               labelText="メールアドレス"
               value={mailAddressValue}
@@ -67,7 +67,7 @@ export default function Page() {
           </Button>
         </form>
       </PageCard>
-      <div className="flex h-full w-full max-w-xl flex-col gap-y-4 px-10 md:px-16">
+      <div className="flex h-full w-full max-w-xl flex-col gap-y-6 px-10 md:px-16">
         <H2 text="初めてご利用の方" />
         <LinkButton href="/sign-up">新規会員登録</LinkButton>
       </div>
