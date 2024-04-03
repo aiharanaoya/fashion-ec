@@ -1,12 +1,12 @@
 import { Meta as _Meta, StoryObj } from '@storybook/react';
 
-import { PageCard } from '.';
+import { ContentCard } from '.';
 
-type Meta = _Meta<typeof PageCard>;
-type Story = StoryObj<typeof PageCard>;
+type Meta = _Meta<typeof ContentCard>;
+type Story = StoryObj<typeof ContentCard>;
 
 export default {
-  component: PageCard,
+  component: ContentCard,
   args: {
     children: <div>children</div>
   }

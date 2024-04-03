@@ -18,3 +18,9 @@ export type ListItem = {
   /** 価格 */
   price: number;
 };
+
+/** 詳細アイテム */
+export type DetailItem = ListItem & {
+  /** 説明 */
+  description: string;
+};
