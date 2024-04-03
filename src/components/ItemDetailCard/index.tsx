@@ -2,8 +2,8 @@ import Image from 'next/image';
 import { FC } from 'react';
 
 import { Button } from '@/components/Button';
+import { ContentCard } from '@/components/ContentCard';
 import { H1 } from '@/components/H1';
-import { PageCard } from '@/components/PageCard';
 import { DetailItem } from '@/types/item';
 
 type Props = DetailItem & {
@@ -22,7 +22,7 @@ export const ItemDetailCard: FC<Props> = ({
   onClickCart
 }: Props) => {
   return (
-    <PageCard>
+    <ContentCard>
       <div className="flex flex-col gap-y-6">
         <div className="relative aspect-[9/10] h-full w-full">
           <Image className="rounded-2xl object-cover" src={image.src} alt={image.alt} fill />
@@ -36,6 +36,6 @@ export const ItemDetailCard: FC<Props> = ({
           カートに入れる
         </Button>
       </div>
-    </PageCard>
+    </ContentCard>
   );
 };

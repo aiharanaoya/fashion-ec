@@ -4,10 +4,10 @@ import { useRouter } from 'next/navigation';
 import { ChangeEvent, useId, useState } from 'react';
 
 import { Button } from '@/components/Button';
+import { ContentCard } from '@/components/ContentCard';
 import { FormText } from '@/components/FormText';
 import { H2 } from '@/components/H2';
 import { LinkButton } from '@/components/LinkButton';
-import { PageCard } from '@/components/PageCard';
 
 export default function Page() {
   const router = useRouter();
@@ -36,7 +36,7 @@ export default function Page() {
 
   return (
     <div className="flex h-full w-full flex-col items-center gap-y-12 px-4 py-8 md:py-12">
-      <PageCard>
+      <ContentCard>
         <form className="flex flex-col gap-y-8">
           <H2 text="ログイン" />
           <div className="flex flex-col gap-y-6">
@@ -66,7 +66,7 @@ export default function Page() {
             ログイン
           </Button>
         </form>
-      </PageCard>
+      </ContentCard>
       <div className="flex h-full w-full max-w-xl flex-col gap-y-6 px-10 md:px-16">
         <H2 text="初めてご利用の方" />
         <LinkButton href="/sign-up">新規会員登録</LinkButton>

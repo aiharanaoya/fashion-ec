@@ -3,7 +3,7 @@
 import { useRouter } from 'next/navigation';
 import { useState, ChangeEvent } from 'react';
 
-import { PageCard } from '@/components/PageCard';
+import { ContentCard } from '@/components/ContentCard';
 import { SignUpConfirm } from '@/components/SignUpConfirm';
 import { SignUpForm } from '@/components/SignUpForm';
 
@@ -68,7 +68,7 @@ export default function Page() {
 
   return (
     <div className="flex justify-center px-4 py-8 md:py-12">
-      <PageCard>
+      <ContentCard>
         {isConfirm ? (
           <SignUpConfirm
             name={name}
@@ -97,7 +97,7 @@ export default function Page() {
             setIsConfirm={setIsConfirm}
           />
         )}
-      </PageCard>
+      </ContentCard>
     </div>
   );
 }
