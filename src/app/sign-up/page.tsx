@@ -58,7 +58,7 @@ export default function Page() {
   };
 
   return (
-    <div className="flex h-full w-full flex-col items-center gap-y-12 px-4 py-12">
+    <div className="flex justify-center px-4 py-12">
       {isConfirm ? (
         <SignUpConfirm
           name={name}
