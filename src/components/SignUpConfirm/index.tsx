@@ -36,9 +36,9 @@ export const SignUpConfirm: FC<Props> = ({
   setIsConfirm
 }: Props) => {
   return (
-    <div className="flex flex-col gap-y-6">
+    <div className="flex flex-col gap-y-8">
       <H2 text="新規会員登録確認" />
-      <div className="flex flex-col gap-y-4">
+      <div className="flex flex-col gap-y-6">
         <ConfirmText labelText="名前" valueText={name} />
         <ConfirmText labelText="郵便番号" valueText={zipCode} />
         <ConfirmText labelText="住所" valueText={address} />
@@ -46,7 +46,7 @@ export const SignUpConfirm: FC<Props> = ({
         <ConfirmText labelText="メールアドレス" valueText={mailAddress} />
         <ConfirmText labelText="パスワード" valueText={password} />
       </div>
-      <div className="flex flex-col gap-y-2">
+      <div className="flex flex-col gap-y-4">
         <Button
           isPrimary
           type="button"
