@@ -7,6 +7,7 @@ import { Button } from '@/components/Button';
 import { FormText } from '@/components/FormText';
 import { H2 } from '@/components/H2';
 import { LinkButton } from '@/components/LinkButton';
+import { PageCard } from '@/components/PageCard';
 
 export default function Page() {
   const router = useRouter();
@@ -34,42 +35,39 @@ export default function Page() {
   };
 
   return (
-    <div className="flex h-full w-full flex-col items-center gap-y-12 px-4 py-12">
-      <form
-        className="
-          flex h-full w-full max-w-md flex-col gap-y-6
-          rounded-2xl bg-slate-100 p-12 shadow-lg
-        "
-      >
-        <H2 text="ログイン" />
-        <div className="flex flex-col gap-y-4">
-          <FormText
-            labelText="メールアドレス"
-            value={mailAddressValue}
-            onChange={changeMailAddressValue}
-            type="email"
-            id={mailAddressId}
-          />
-          <FormText
-            labelText="パスワード"
-            value={passwordValue}
-            onChange={changePasswordValue}
-            type="password"
-            id={passwordId}
-          />
-        </div>
-        <Button
-          isPrimary
-          type="button"
-          // TODO: ログイン処理
-          onClick={() => {
-            router.push('/');
-          }}
-        >
-          ログイン
-        </Button>
-      </form>
-      <div className="flex h-full w-full max-w-md flex-col gap-y-4 px-12">
+    <div className="flex h-full w-full flex-col items-center gap-y-12 px-4 py-8 md:py-12">
+      <PageCard>
+        <form className="flex flex-col gap-y-8">
+          <H2 text="ログイン" />
+          <div className="flex flex-col gap-y-6">
+            <FormText
+              labelText="メールアドレス"
+              value={mailAddressValue}
+              onChange={changeMailAddressValue}
+              type="email"
+              id={mailAddressId}
+            />
+            <FormText
+              labelText="パスワード"
+              value={passwordValue}
+              onChange={changePasswordValue}
+              type="password"
+              id={passwordId}
+            />
+          </div>
+          <Button
+            isPrimary
+            type="button"
+            // TODO: ログイン処理
+            onClick={() => {
+              router.push('/');
+            }}
+          >
+            ログイン
+          </Button>
+        </form>
+      </PageCard>
+      <div className="flex h-full w-full max-w-xl flex-col gap-y-6 px-10 md:px-16">
         <H2 text="初めてご利用の方" />
         <LinkButton href="/sign-up">新規会員登録</LinkButton>
       </div>

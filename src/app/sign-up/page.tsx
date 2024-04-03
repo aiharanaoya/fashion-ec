@@ -1,11 +1,15 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import { useState, ChangeEvent } from 'react';
 
+import { PageCard } from '@/components/PageCard';
 import { SignUpConfirm } from '@/components/SignUpConfirm';
 import { SignUpForm } from '@/components/SignUpForm';
 
 export default function Page() {
+  const router = useRouter();
+
   /** 確認画面か */
   const [isConfirm, setIsConfirm] = useState(false);
 
@@ -57,35 +61,43 @@ export default function Page() {
     setPassword(e.target.value);
   };
 
+  /** 送信処理 */
+  const onSubmit = () => {
+    router.push('/');
+  };
+
   return (
-    <div className="flex h-full w-full flex-col items-center gap-y-12 px-4 py-12">
-      {isConfirm ? (
-        <SignUpConfirm
-          name={name}
-          zipCode={zipCode}
-          address={address}
-          tel={tel}
-          mailAddress={mailAddress}
-          password={password}
-          setIsConfirm={setIsConfirm}
-        />
-      ) : (
-        <SignUpForm
-          name={name}
-          zipCode={zipCode}
-          address={address}
-          tel={tel}
-          mailAddress={mailAddress}
-          password={password}
-          changeName={changeName}
-          changeZipCode={changeZipCode}
-          changeAddress={changeAddress}
-          changeTel={changeTel}
-          changeMailAddress={changeMailAddress}
-          changePassword={changePassword}
-          setIsConfirm={setIsConfirm}
-        />
-      )}
+    <div className="flex justify-center px-4 py-8 md:py-12">
+      <PageCard>
+        {isConfirm ? (
+          <SignUpConfirm
+            name={name}
+            zipCode={zipCode}
+            address={address}
+            tel={tel}
+            mailAddress={mailAddress}
+            password={password}
+            setIsConfirm={setIsConfirm}
+            onSubmit={onSubmit}
+          />
+        ) : (
+          <SignUpForm
+            name={name}
+            zipCode={zipCode}
+            address={address}
+            tel={tel}
+            mailAddress={mailAddress}
+            password={password}
+            changeName={changeName}
+            changeZipCode={changeZipCode}
+            changeAddress={changeAddress}
+            changeTel={changeTel}
+            changeMailAddress={changeMailAddress}
+            changePassword={changePassword}
+            setIsConfirm={setIsConfirm}
+          />
+        )}
+      </PageCard>
     </div>
   );
 }

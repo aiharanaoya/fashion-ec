@@ -21,6 +21,8 @@ type Props = {
   password: string;
   /** 確認画面かの更新関数 */
   setIsConfirm: Dispatch<SetStateAction<boolean>>;
+  /** 送信処理 */
+  onSubmit: () => void;
 };
 
 /**
@@ -33,17 +35,13 @@ export const SignUpConfirm: FC<Props> = ({
   tel,
   mailAddress,
   password,
-  setIsConfirm
+  setIsConfirm,
+  onSubmit
 }: Props) => {
   return (
-    <div
-      className="
-        flex h-full w-full max-w-md flex-col gap-y-6
-        rounded-2xl bg-slate-100 p-12 shadow-lg
-      "
-    >
+    <form className="flex flex-col gap-y-8" onSubmit={onSubmit}>
       <H2 text="新規会員登録確認" />
-      <div className="flex flex-col gap-y-4">
+      <div className="flex flex-col gap-y-6">
         <ConfirmText labelText="名前" valueText={name} />
         <ConfirmText labelText="郵便番号" valueText={zipCode} />
         <ConfirmText labelText="住所" valueText={address} />
@@ -51,13 +49,8 @@ export const SignUpConfirm: FC<Props> = ({
         <ConfirmText labelText="メールアドレス" valueText={mailAddress} />
         <ConfirmText labelText="パスワード" valueText={password} />
       </div>
-      <div className="flex flex-col gap-y-2">
-        <Button
-          isPrimary
-          type="button"
-          // TODO: 入力内容送信処理
-          onClick={() => {}}
-        >
+      <div className="flex flex-col gap-y-4">
+        <Button isPrimary type="submit">
           登録
         </Button>
         <Button
@@ -69,6 +62,6 @@ export const SignUpConfirm: FC<Props> = ({
           修正
         </Button>
       </div>
-    </div>
+    </form>
   );
 };

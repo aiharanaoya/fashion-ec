@@ -72,14 +72,9 @@ export const SignUpForm: FC<Props> = ({
   const passwordId = useId();
 
   return (
-    <form
-      className="
-        flex h-full w-full max-w-md flex-col gap-y-6
-        rounded-2xl bg-slate-100 p-12 shadow-lg
-      "
-    >
+    <form className="flex flex-col gap-y-8">
       <H2 text="新規会員登録" />
-      <div className="flex flex-col gap-y-4">
+      <div className="flex flex-col gap-y-6">
         <FormText required labelText="名前" value={name} onChange={changeName} id={nameId} />
         <FormText
           required
