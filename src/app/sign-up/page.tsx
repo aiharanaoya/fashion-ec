@@ -59,7 +59,7 @@ export default function Page() {
   };
 
   return (
-    <div className="flex justify-center px-4 py-12">
+    <div className="flex justify-center px-4 py-8 md:py-12">
       <PageCard>
         {isConfirm ? (
           <SignUpConfirm

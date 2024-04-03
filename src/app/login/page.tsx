@@ -35,7 +35,7 @@ export default function Page() {
   };
 
   return (
-    <div className="flex h-full w-full flex-col items-center gap-y-12 px-6 py-12">
+    <div className="flex h-full w-full flex-col items-center gap-y-12 px-4 py-8 md:py-12">
       <PageCard>
         <form className="flex flex-col gap-y-8">
           <H2 text="ログイン" />
