@@ -1,25 +1,41 @@
 import Image from 'next/image';
 import { FC } from 'react';
 
+import { Button } from '@/components/Button';
 import { H1 } from '@/components/H1';
+import { PageCard } from '@/components/PageCard';
 import { DetailItem } from '@/types/item';
 
-type Props = DetailItem;
+type Props = DetailItem & {
+  /** カート追加処理 */
+  onClickCart: () => void;
+};
 
 /**
  * ItemDetailCard
  */
-export const ItemDetailCard: FC<Props> = ({ image, name, price, description }: Props) => {
+export const ItemDetailCard: FC<Props> = ({
+  image,
+  name,
+  price,
+  description,
+  onClickCart
+}: Props) => {
   return (
-    <div className="flex flex-col gap-y-6">
-      <div className="relative aspect-[9/10] h-full w-full">
-        <Image className="rounded-2xl object-cover" src={image.src} alt={image.alt} fill />
+    <PageCard>
+      <div className="flex flex-col gap-y-6">
+        <div className="relative aspect-[9/10] h-full w-full">
+          <Image className="rounded-2xl object-cover" src={image.src} alt={image.alt} fill />
+        </div>
+        <div className="flex flex-col gap-y-4">
+          <H1 text={name} />
+          <p className="text-2xl font-bold">¥{price}</p>
+          <p>{description}</p>
+        </div>
+        <Button isPrimary type="button" onClick={onClickCart}>
+          カートに入れる
+        </Button>
       </div>
-      <div className="flex flex-col gap-y-4">
-        <H1 text={name} />
-        <p className="text-2xl font-bold">¥{price}</p>
-        <p>{description}</p>
-      </div>
-    </div>
+    </PageCard>
   );
 };
