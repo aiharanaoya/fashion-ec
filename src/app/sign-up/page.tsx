@@ -2,6 +2,7 @@
 
 import { useState, ChangeEvent } from 'react';
 
+import { PageCard } from '@/components/PageCard';
 import { SignUpConfirm } from '@/components/SignUpConfirm';
 import { SignUpForm } from '@/components/SignUpForm';
 
@@ -59,33 +60,35 @@ export default function Page() {
 
   return (
     <div className="flex justify-center px-4 py-12">
-      {isConfirm ? (
-        <SignUpConfirm
-          name={name}
-          zipCode={zipCode}
-          address={address}
-          tel={tel}
-          mailAddress={mailAddress}
-          password={password}
-          setIsConfirm={setIsConfirm}
-        />
-      ) : (
-        <SignUpForm
-          name={name}
-          zipCode={zipCode}
-          address={address}
-          tel={tel}
-          mailAddress={mailAddress}
-          password={password}
-          changeName={changeName}
-          changeZipCode={changeZipCode}
-          changeAddress={changeAddress}
-          changeTel={changeTel}
-          changeMailAddress={changeMailAddress}
-          changePassword={changePassword}
-          setIsConfirm={setIsConfirm}
-        />
-      )}
+      <PageCard>
+        {isConfirm ? (
+          <SignUpConfirm
+            name={name}
+            zipCode={zipCode}
+            address={address}
+            tel={tel}
+            mailAddress={mailAddress}
+            password={password}
+            setIsConfirm={setIsConfirm}
+          />
+        ) : (
+          <SignUpForm
+            name={name}
+            zipCode={zipCode}
+            address={address}
+            tel={tel}
+            mailAddress={mailAddress}
+            password={password}
+            changeName={changeName}
+            changeZipCode={changeZipCode}
+            changeAddress={changeAddress}
+            changeTel={changeTel}
+            changeMailAddress={changeMailAddress}
+            changePassword={changePassword}
+            setIsConfirm={setIsConfirm}
+          />
+        )}
+      </PageCard>
     </div>
   );
 }

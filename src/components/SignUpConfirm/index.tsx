@@ -36,12 +36,7 @@ export const SignUpConfirm: FC<Props> = ({
   setIsConfirm
 }: Props) => {
   return (
-    <div
-      className="
-        flex h-full w-full max-w-md flex-col gap-y-6
-        rounded-2xl bg-slate-100 p-12 shadow-lg
-      "
-    >
+    <div className="flex flex-col gap-y-6">
       <H2 text="新規会員登録確認" />
       <div className="flex flex-col gap-y-4">
         <ConfirmText labelText="名前" valueText={name} />
