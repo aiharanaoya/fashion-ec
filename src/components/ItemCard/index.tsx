@@ -3,7 +3,7 @@ import { FC } from 'react';
 
 import type { ListItem } from '@/types/item';
 
-type Props = ListItem;
+type Props = Omit<ListItem, 'id'>;
 
 /**
  * アイテムカード

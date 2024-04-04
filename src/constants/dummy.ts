@@ -18,6 +18,7 @@ export const dummyCarouselImageList: Array<ImageItem> = [
 
 /** ダミー一覧アイテム */
 export const dummyListItem: ListItem = {
+  id: '1',
   image: {
     src: '/dummy-image.png',
     alt: ''
@@ -28,6 +29,7 @@ export const dummyListItem: ListItem = {
 
 /** ダミー詳細アイテム */
 export const dummyDetailItem: DetailItem = {
+  id: '1',
   image: {
     src: '/dummy-image.png',
     alt: ''

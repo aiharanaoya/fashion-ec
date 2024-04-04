@@ -19,8 +19,8 @@ export const ItemSection: FC<Props> = ({ headlineText, itemList }: Props) => {
     <section className="flex flex-col gap-y-4">
       <H2 text={headlineText} />
       <ul className="grid w-full grid-cols-2 gap-4 md:grid-cols-4">
-        {itemList.map((item, index) => (
-          <li className="w-full" key={`item-list-${index}`}>
+        {itemList.map((item) => (
+          <li className="w-full" key={`item-list-${item.id}`}>
             <ItemCard
               image={{
                 src: item.image.src,

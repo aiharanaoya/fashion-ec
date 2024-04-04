@@ -6,7 +6,7 @@ import { ContentCard } from '@/components/ContentCard';
 import { H1 } from '@/components/H1';
 import { DetailItem } from '@/types/item';
 
-type Props = DetailItem & {
+type Props = Omit<DetailItem, 'id'> & {
   /** カート追加処理 */
   onClickCart: () => void;
 };
