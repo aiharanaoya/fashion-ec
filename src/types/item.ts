@@ -8,6 +8,8 @@ export type ImageItem = {
 
 /** 一覧アイテム */
 export type ListItem = {
+  /** id */
+  id: string;
   /** 画像 */
   image: {
     src: string;
