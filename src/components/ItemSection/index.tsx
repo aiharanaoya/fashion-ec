@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FC } from 'react';
 
 import { H2 } from '@/components/H2';
@@ -21,14 +22,16 @@ export const ItemSection: FC<Props> = ({ headlineText, itemList }: Props) => {
       <ul className="grid w-full grid-cols-2 gap-4 md:grid-cols-4">
         {itemList.map((item) => (
           <li className="w-full" key={`item-list-${item.id}`}>
-            <ItemCard
-              image={{
-                src: item.image.src,
-                alt: item.image.alt
-              }}
-              name={item.name}
-              price={item.price}
-            />
+            <Link href={`/item/${item.id}`}>
+              <ItemCard
+                image={{
+                  src: item.image.src,
+                  alt: item.image.alt
+                }}
+                name={item.name}
+                price={item.price}
+              />
+            </Link>
           </li>
         ))}
       </ul>
