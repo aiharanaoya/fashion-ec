@@ -3,6 +3,7 @@
 import { ShoppingCartIcon, UserIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { ChangeEvent, FC, useState } from 'react';
+import { twMerge } from 'tailwind-merge';
 
 import { FormSearch } from '@/components/FormSearch';
 import { IconLinkButton } from '@/components/IconLinkButton';
@@ -10,10 +11,15 @@ import { LinkButton } from '@/components/LinkButton';
 import { Logo } from '@/components/Logo';
 import { isLogin } from '@/constants/dummy';
 
+type Props = {
+  /** ロゴのみ表示するか */
+  isOnlyLogo?: boolean;
+};
+
 /**
  * ヘッダー
  */
-export const Header: FC = () => {
+export const Header: FC<Props> = ({ isOnlyLogo = false }) => {
   /** 検索ワード */
   const [searchValue, setSearchValue] = useState('');
 
@@ -56,7 +62,7 @@ export const Header: FC = () => {
         <Link href="/" className="duration-300 hover:opacity-70">
           <Logo />
         </Link>
-        <div className="flex items-center gap-x-2">
+        <div className={twMerge('flex items-center gap-x-2', isOnlyLogo && 'hidden')}>
           <div className="w-96 text-sm">
             <FormSearch
               href={`/search?query=${searchValue}`}
@@ -78,9 +84,11 @@ export const Header: FC = () => {
           <Link href="/" className="duration-300 hover:opacity-70">
             <Logo />
           </Link>
-          <ButtonArea />
+          <div className={twMerge(isOnlyLogo && 'hidden')}>
+            <ButtonArea />
+          </div>
         </div>
-        <div className="w-full text-sm">
+        <div className={twMerge('w-full text-sm', isOnlyLogo && 'hidden')}>
           <FormSearch
             href={`/search?query=${searchValue}`}
             value={searchValue}
