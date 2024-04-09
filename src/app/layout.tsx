@@ -3,8 +3,6 @@ import '@/styles/globals.css';
 import type { Metadata } from 'next';
 import { ReactNode } from 'react';
 
-import { Footer } from '@/components/Footer';
-import { Header } from '@/components/Header';
 import { defaultStyle } from '@/styles/defaultStyle';
 
 export const metadata: Metadata = {
@@ -15,11 +13,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="ja">
-      <body className={`${defaultStyle} flex min-h-screen flex-col`}>
-        <Header />
-        <main className="grow">{children}</main>
-        <Footer />
-      </body>
+      <body className={`${defaultStyle} flex min-h-screen flex-col`}>{children}</body>
     </html>
   );
 }

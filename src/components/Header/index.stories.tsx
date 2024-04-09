@@ -13,3 +13,9 @@ export default {
 export const Default: Story = {
   args: {}
 };
+
+export const OnlyLogo: Story = {
+  args: {
+    isOnlyLogo: true
+  }
+};
