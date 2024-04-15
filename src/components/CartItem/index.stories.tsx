@@ -8,7 +8,13 @@ type Story = StoryObj<typeof CartItem>;
 export default {
   component: CartItem,
   args: {
-    text: 'テキスト'
+    image: {
+      src: 'https://picsum.photos/1600/900',
+      alt: ''
+    },
+    name: 'アイテム名アイテム名アイテム名',
+    price: 5000,
+    onClickDelete: () => {}
   }
 } as Meta;
 
