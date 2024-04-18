@@ -34,7 +34,7 @@ export const Header: FC<Props> = ({ isOnlyLogo = false }) => {
       <div className="flex items-center gap-x-1">
         {isLogin ? (
           <>
-            <IconLinkButton href="/">
+            <IconLinkButton href="/cart">
               <ShoppingCartIcon className="w-6" />
             </IconLinkButton>
             <IconLinkButton href="/">
