@@ -54,9 +54,9 @@ export const Header: FC<Props> = ({ isOnlyLogo = false }) => {
     <>
       <header
         className="
-        sticky top-0 z-10 hidden h-full w-full items-center
-        justify-between border-b
-        border-slate-300 bg-white px-8 py-2 md:flex
+        sticky top-0 z-10 hidden h-[4.3rem] w-full
+        items-center justify-between
+        border-b border-slate-300 bg-white px-8 py-2 md:flex
       "
       >
         <Link href="/" className="duration-300 hover:opacity-70">
