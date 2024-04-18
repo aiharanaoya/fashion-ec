@@ -41,4 +41,4 @@ export const dummyDetailItem: DetailItem = {
 };
 
 /** ログイン状態 */
-export const isLogin = false;
+export const isLogin = true;
