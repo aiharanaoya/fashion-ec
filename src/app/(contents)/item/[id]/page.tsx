@@ -5,7 +5,7 @@ import { dummyDetailItem } from '@/constants/dummy';
 
 export default function Page() {
   return (
-    <div className="flex justify-center px-4 py-8 md:py-12">
+    <div className="flex justify-center py-8 pb-4 md:py-12">
       <ItemDetailCard
         image={dummyDetailItem.image}
         name={dummyDetailItem.name}
