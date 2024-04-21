@@ -1,5 +1,6 @@
+/* eslint-disable-next-line */
 const { db } = require('@vercel/postgres');
-
+/* eslint-disable-next-line */
 const { ItemData } = require('./data.js');
 
 async function seedItems(client) {
