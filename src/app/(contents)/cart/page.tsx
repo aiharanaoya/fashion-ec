@@ -13,7 +13,7 @@ export default function Page() {
     <div className="flex justify-center pb-16 pt-8">
       <div className="flex h-full w-full max-w-5xl flex-col gap-y-8 px-4">
         <H1 text="カート" />
-        <div className="flex h-full w-full gap-x-12">
+        <div className="flex h-full w-full flex-col gap-y-12 md:flex-row md:gap-x-12">
           <div className="flex h-full w-full flex-[2] flex-col items-end gap-y-4">
             <ul className="flex h-full w-full flex-col gap-y-4">
               {dummyItemList.map((item) => (
