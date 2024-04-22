@@ -9,7 +9,6 @@ import { FormSearch } from '@/components/FormSearch';
 import { IconLinkButton } from '@/components/IconLinkButton';
 import { LinkButton } from '@/components/LinkButton';
 import { Logo } from '@/components/Logo';
-import { isLogin } from '@/constants/dummy';
 
 type Props = {
   /** ロゴのみ表示するか */
@@ -20,6 +19,9 @@ type Props = {
  * ヘッダー
  */
 export const Header: FC<Props> = ({ isOnlyLogo = false }) => {
+  /** ログイン状態 */
+  const isLogin = true;
+
   /** 検索ワード */
   const [searchValue, setSearchValue] = useState('');
 
