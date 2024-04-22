@@ -1,19 +1,18 @@
-'use client';
-
+import { fetchItemById } from '@/actions/item';
 import { ItemDetailCard } from '@/components/ItemDetailCard';
-import { dummyDetailItem } from '@/constants/dummy';
 
-export default function Page() {
+export default async function Page({ params }: { params: { id: string } }) {
+  const id = params.id;
+
+  const item = await fetchItemById(id);
+
   return (
     <div className="flex justify-center py-8 pb-4 md:py-12">
       <ItemDetailCard
-        image={dummyDetailItem.image}
-        name={dummyDetailItem.name}
-        price={dummyDetailItem.price}
-        description={dummyDetailItem.description}
-        onClickCart={() => {
-          console.log('カート追加処理');
-        }}
+        image={item.image}
+        name={item.name}
+        price={item.price}
+        description={item.description}
       />
     </div>
   );

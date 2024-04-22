@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import { FC } from 'react';
 
@@ -6,21 +8,12 @@ import { ContentCard } from '@/components/ContentCard';
 import { H1 } from '@/components/H1';
 import { DetailItem } from '@/types/item';
 
-type Props = Omit<DetailItem, 'id'> & {
-  /** カート追加処理 */
-  onClickCart: () => void;
-};
+type Props = Omit<DetailItem, 'id'>;
 
 /**
  * ItemDetailCard
  */
-export const ItemDetailCard: FC<Props> = ({
-  image,
-  name,
-  price,
-  description,
-  onClickCart
-}: Props) => {
+export const ItemDetailCard: FC<Props> = ({ image, name, price, description }: Props) => {
   return (
     <ContentCard>
       <div className="flex flex-col gap-y-6">
@@ -32,7 +25,13 @@ export const ItemDetailCard: FC<Props> = ({
           <p className="text-2xl font-bold">¥{price}</p>
           <p>{description}</p>
         </div>
-        <Button isPrimary type="button" onClick={onClickCart}>
+        <Button
+          isPrimary
+          type="button"
+          onClick={() => {
+            console.log('カート追加処理');
+          }}
+        >
           カートに入れる
         </Button>
       </div>
