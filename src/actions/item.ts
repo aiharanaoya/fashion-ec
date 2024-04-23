@@ -20,7 +20,7 @@ type SQLItem = {
 };
 
 /** アイテム一覧取得 */
-export const fetchItemList = async (): Promise<Array<ListItem>> => {
+export const fetchItemList = async (query?: string): Promise<Array<ListItem>> => {
   noStore();
 
   try {
@@ -32,6 +32,7 @@ export const fetchItemList = async (): Promise<Array<ListItem>> => {
         image_src,
         image_alt
       FROM items
+      WHERE items.name LIKE ${`%${query ?? ''}%`}
     `;
 
     const itemList = data.rows.map((item) => {
