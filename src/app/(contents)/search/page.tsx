@@ -15,7 +15,10 @@ export default function Page({
   return (
     <div className="flex justify-center py-16 pt-8">
       <div className="h-full w-full max-w-5xl px-4">
-        <ItemSection headlineText={`${query}の検索結果`} itemList={dummyItemList} />
+        <ItemSection
+          headlineText={query ? `${query}の検索結果` : '全てのアイテム'}
+          itemList={dummyItemList}
+        />
       </div>
     </div>
   );
