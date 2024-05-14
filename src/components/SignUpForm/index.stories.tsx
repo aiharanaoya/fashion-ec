@@ -12,13 +12,13 @@ export default {
     zipCode: '',
     address: '',
     tel: '',
-    mailAddress: '',
+    email: '',
     password: '',
     changeName: () => {},
     changeZipCode: () => {},
     changeAddress: () => {},
     changeTel: () => {},
-    changeMailAddress: () => {},
+    changeEmail: () => {},
     changePassword: () => {},
     setIsConfirm: () => {}
   }

@@ -12,7 +12,7 @@ export default {
     zipCode: 'zipCode',
     address: 'address',
     tel: 'tel',
-    mailAddress: 'mailAddress',
+    email: 'email',
     password: 'password',
     setIsConfirm: () => {}
   }

@@ -13,20 +13,20 @@ export default function Page() {
   const router = useRouter();
 
   /** メールアドレスID */
-  const mailAddressId = useId();
+  const emailId = useId();
 
   /** パスワードID */
   const passwordId = useId();
 
   /** メールアドレス入力値 */
-  const [mailAddressValue, setMailAddressValue] = useState('');
+  const [emailValue, setEmailValue] = useState('');
 
   /** パスワード入力値 */
   const [passwordValue, setPasswordValue] = useState('');
 
   /** メールアドレス入力処理 */
-  const changeMailAddressValue = (e: ChangeEvent<HTMLInputElement>) => {
-    setMailAddressValue(e.target.value);
+  const changeEmailValue = (e: ChangeEvent<HTMLInputElement>) => {
+    setEmailValue(e.target.value);
   };
 
   /** パスワード入力処理 */
@@ -42,10 +42,10 @@ export default function Page() {
           <div className="flex flex-col gap-y-6">
             <FormText
               labelText="メールアドレス"
-              value={mailAddressValue}
-              onChange={changeMailAddressValue}
+              value={emailValue}
+              onChange={changeEmailValue}
               type="email"
-              id={mailAddressId}
+              id={emailId}
             />
             <FormText
               labelText="パスワード"
