@@ -9,15 +9,18 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         password: {}
       },
       authorize: async (credentials) => {
-        const matched = credentials?.email === 'email' && credentials?.password === 'password';
+        const matched =
+          credentials.email === 'xxxx@xxxx.com' && credentials.password === 'xxxxxxxx';
 
         if (!matched) {
           return null;
         }
 
+        console.log('ログインに成功しました');
+
         return {
-          email: 'email',
-          password: 'password'
+          email: 'xxxx@xxxx.com',
+          password: 'xxxxxxxx'
         };
       }
     })

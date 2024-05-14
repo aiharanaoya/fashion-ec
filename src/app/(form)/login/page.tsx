@@ -1,8 +1,4 @@
-'use client';
-
-import { useRouter } from 'next/navigation';
-import { ChangeEvent, useId, useState } from 'react';
-
+import { signIn } from '@/auth';
 import { Button } from '@/components/Button';
 import { ContentCard } from '@/components/ContentCard';
 import { FormText } from '@/components/FormText';
@@ -10,61 +6,22 @@ import { H2 } from '@/components/H2';
 import { LinkButton } from '@/components/LinkButton';
 
 export default function Page() {
-  const router = useRouter();
-
-  /** メールアドレスID */
-  const emailId = useId();
-
-  /** パスワードID */
-  const passwordId = useId();
-
-  /** メールアドレス入力値 */
-  const [emailValue, setEmailValue] = useState('');
-
-  /** パスワード入力値 */
-  const [passwordValue, setPasswordValue] = useState('');
-
-  /** メールアドレス入力処理 */
-  const changeEmailValue = (e: ChangeEvent<HTMLInputElement>) => {
-    setEmailValue(e.target.value);
-  };
-
-  /** パスワード入力処理 */
-  const changePasswordValue = (e: ChangeEvent<HTMLInputElement>) => {
-    setPasswordValue(e.target.value);
-  };
-
   return (
     <div className="flex h-full w-full flex-col items-center gap-y-12 px-4 py-8 md:py-12">
       <ContentCard>
-        <form className="flex flex-col gap-y-8">
+        <form
+          className="flex flex-col gap-y-8"
+          action={async (formData) => {
+            'use server';
+            await signIn('credentials', formData);
+          }}
+        >
           <H2 text="ログイン" />
           <div className="flex flex-col gap-y-6">
-            <FormText
-              labelText="メールアドレス"
-              value={emailValue}
-              onChange={changeEmailValue}
-              type="email"
-              id={emailId}
-            />
-            <FormText
-              labelText="パスワード"
-              value={passwordValue}
-              onChange={changePasswordValue}
-              type="password"
-              id={passwordId}
-            />
+            <FormText name="email" labelText="メールアドレス" type="email" id="email" />
+            <FormText name="password" labelText="パスワード" type="password" id="password" />
           </div>
-          <Button
-            isPrimary
-            type="button"
-            // TODO: ログイン処理
-            onClick={() => {
-              router.push('/');
-            }}
-          >
-            ログイン
-          </Button>
+          <Button isPrimary>ログイン</Button>
         </form>
       </ContentCard>
       <div className="flex h-full w-full max-w-xl flex-col gap-y-6 px-10 md:px-16">
