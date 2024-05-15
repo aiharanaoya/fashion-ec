@@ -16,7 +16,7 @@ type Props = {
   /** 電話番号 */
   tel: string;
   /** メールアドレス */
-  mailAddress: string;
+  email: string;
   /** パスワード */
   password: string;
   /** 確認画面かの更新関数 */
@@ -33,7 +33,7 @@ export const SignUpConfirm: FC<Props> = ({
   zipCode,
   address,
   tel,
-  mailAddress,
+  email,
   password,
   setIsConfirm,
   onSubmit
@@ -46,7 +46,7 @@ export const SignUpConfirm: FC<Props> = ({
         <ConfirmText labelText="郵便番号" valueText={zipCode} />
         <ConfirmText labelText="住所" valueText={address} />
         <ConfirmText labelText="電話番号" valueText={tel} />
-        <ConfirmText labelText="メールアドレス" valueText={mailAddress} />
+        <ConfirmText labelText="メールアドレス" valueText={email} />
         <ConfirmText labelText="パスワード" valueText={password} />
       </div>
       <div className="flex flex-col gap-y-4">

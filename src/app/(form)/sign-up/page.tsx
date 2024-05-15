@@ -26,7 +26,7 @@ export default function Page() {
   const [tel, setTel] = useState('');
 
   /** メールアドレス */
-  const [mailAddress, setMailAddress] = useState('');
+  const [email, setEmail] = useState('');
 
   /** パスワード */
   const [password, setPassword] = useState('');
@@ -52,8 +52,8 @@ export default function Page() {
   };
 
   /** メールアドレス入力処理 */
-  const changeMailAddress = (e: ChangeEvent<HTMLInputElement>) => {
-    setMailAddress(e.target.value);
+  const changeEmail = (e: ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
   };
 
   /** パスワード入力処理 */
@@ -75,7 +75,7 @@ export default function Page() {
             zipCode={zipCode}
             address={address}
             tel={tel}
-            mailAddress={mailAddress}
+            email={email}
             password={password}
             setIsConfirm={setIsConfirm}
             onSubmit={onSubmit}
@@ -86,13 +86,13 @@ export default function Page() {
             zipCode={zipCode}
             address={address}
             tel={tel}
-            mailAddress={mailAddress}
+            email={email}
             password={password}
             changeName={changeName}
             changeZipCode={changeZipCode}
             changeAddress={changeAddress}
             changeTel={changeTel}
-            changeMailAddress={changeMailAddress}
+            changeEmail={changeEmail}
             changePassword={changePassword}
             setIsConfirm={setIsConfirm}
           />

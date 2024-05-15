@@ -20,7 +20,7 @@ type Props = {
  */
 export const Header: FC<Props> = ({ isOnlyLogo = false }) => {
   /** ログイン状態 */
-  const isLogin = true;
+  const isLogin = false;
 
   /** 検索ワード */
   const [searchValue, setSearchValue] = useState('');
