@@ -1,4 +1,4 @@
-const ItemData = [
+const itemData = [
   {
     name: 'シャツ ブルー',
     price: 5000,
@@ -37,6 +37,26 @@ const ItemData = [
   }
 ];
 
+const userData = [
+  {
+    name: 'テストユーザー1',
+    postalCode: '0000000',
+    address: '東京都千代田区永田町1-1',
+    phoneNumber: '00000000000',
+    email: 'test1@email.com',
+    password: 'testtest'
+  },
+  {
+    name: 'テストユーザー2',
+    postalCode: '0000000',
+    address: '東京都千代田区永田町1-1',
+    phoneNumber: '00000000000',
+    email: 'test2@email.com',
+    password: 'testtest'
+  }
+];
+
 module.exports = {
-  ItemData
+  itemData,
+  userData
 };

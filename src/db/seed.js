@@ -1,7 +1,9 @@
 /* eslint-disable-next-line */
 const { db } = require('@vercel/postgres');
 /* eslint-disable-next-line */
-const { ItemData } = require('./data.js');
+const bcrypt = require('bcrypt');
+/* eslint-disable-next-line */
+const { itemData, userData } = require('./data.js');
 
 async function seedItems(client) {
   try {
@@ -21,7 +23,7 @@ async function seedItems(client) {
     `;
 
     const insertedItems = await Promise.all(
-      ItemData.map(
+      itemData.map(
         (item) => client.sql`
           INSERT INTO items (name, price, description, image_src, image_alt)
           VALUES (${item.name}, ${item.price}, ${item.description}, ${item.image.src}, ${item.image.alt})
@@ -40,10 +42,52 @@ async function seedItems(client) {
   }
 }
 
+async function seedUsers(client) {
+  try {
+    await client.sql`DROP TABLE users;`;
+
+    await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
+
+    const createTable = await client.sql`
+      CREATE TABLE IF NOT EXISTS users (
+        id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+        name VARCHAR(100) NOT NULL,
+        postal_code VARCHAR(7) NOT NULL,
+        address VARCHAR(100) NOT NULL,
+        phone_number VARCHAR(11) NOT NULL,
+        email VARCHAR(100) NOT NULL UNIQUE,
+        password VARCHAR(100) NOT NULL
+      );
+    `;
+
+    const insertedUsers = await Promise.all(
+      userData.map(async (user) => {
+        const hashedPassword = await bcrypt.hash(user.password, 10);
+
+        return client.sql`
+          INSERT INTO users (name, postal_code, address, phone_number, email, password)
+          VALUES (${user.name}, ${user.postalCode}, ${user.address}, ${user.phoneNumber}, ${user.email}, ${hashedPassword})
+          ON CONFLICT (id) DO NOTHING;
+        `;
+      })
+    );
+
+    return {
+      createTable,
+      users: insertedUsers
+    };
+  } catch (error) {
+    console.error('usersのseedに失敗しました', error);
+    throw error;
+  }
+}
+
 async function main() {
   const client = await db.connect();
 
   await seedItems(client);
+
+  await seedUsers(client);
 
   await client.end();
 }
