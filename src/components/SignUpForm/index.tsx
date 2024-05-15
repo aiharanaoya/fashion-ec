@@ -10,7 +10,7 @@ type Props = {
   /** 名前 */
   name: string;
   /** 郵便番号 */
-  zipCode: string;
+  postalCode: string;
   /** 住所 */
   address: string;
   /** 電話番号 */
@@ -22,7 +22,7 @@ type Props = {
   /** 名前入力処理 */
   changeName: (e: ChangeEvent<HTMLInputElement>) => void;
   /** 郵便番号入力処理 */
-  changeZipCode: (e: ChangeEvent<HTMLInputElement>) => void;
+  changePostalCode: (e: ChangeEvent<HTMLInputElement>) => void;
   /** 住所入力処理 */
   changeAddress: (e: ChangeEvent<HTMLInputElement>) => void;
   /** 電話番号入力処理 */
@@ -40,13 +40,13 @@ type Props = {
  */
 export const SignUpForm: FC<Props> = ({
   name,
-  zipCode,
+  postalCode,
   address,
   tel,
   email,
   password,
   changeName,
-  changeZipCode,
+  changePostalCode,
   changeAddress,
   changeTel,
   changeEmail,
@@ -57,7 +57,7 @@ export const SignUpForm: FC<Props> = ({
   const nameId = useId();
 
   /** 郵便番号ID */
-  const zipCodeId = useId();
+  const postalCodeId = useId();
 
   /** 住所ID */
   const addressId = useId();
@@ -79,9 +79,9 @@ export const SignUpForm: FC<Props> = ({
         <FormText
           required
           labelText="郵便番号"
-          value={zipCode}
-          onChange={changeZipCode}
-          id={zipCodeId}
+          value={postalCode}
+          onChange={changePostalCode}
+          id={postalCodeId}
         />
         <FormText
           required

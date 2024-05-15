@@ -17,7 +17,7 @@ export default function Page() {
   const [name, setName] = useState('');
 
   /** 郵便番号 */
-  const [zipCode, setZipCode] = useState('');
+  const [postalCode, setPostalCode] = useState('');
 
   /** 住所 */
   const [address, setAddress] = useState('');
@@ -37,8 +37,8 @@ export default function Page() {
   };
 
   /** 郵便番号入力処理 */
-  const changeZipCode = (e: ChangeEvent<HTMLInputElement>) => {
-    setZipCode(e.target.value);
+  const changePostalCode = (e: ChangeEvent<HTMLInputElement>) => {
+    setPostalCode(e.target.value);
   };
 
   /** 住所入力処理 */
@@ -72,7 +72,7 @@ export default function Page() {
         {isConfirm ? (
           <SignUpConfirm
             name={name}
-            zipCode={zipCode}
+            postalCode={postalCode}
             address={address}
             tel={tel}
             email={email}
@@ -83,13 +83,13 @@ export default function Page() {
         ) : (
           <SignUpForm
             name={name}
-            zipCode={zipCode}
+            postalCode={postalCode}
             address={address}
             tel={tel}
             email={email}
             password={password}
             changeName={changeName}
-            changeZipCode={changeZipCode}
+            changePostalCode={changePostalCode}
             changeAddress={changeAddress}
             changeTel={changeTel}
             changeEmail={changeEmail}
