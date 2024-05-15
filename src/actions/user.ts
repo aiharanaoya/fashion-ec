@@ -36,7 +36,7 @@ export const fetchUserByEmail = async (email: string): Promise<User> => {
         email,
         password
       FROM users
-      WHERE items.email = ${email};
+      WHERE users.email = ${email};
     `;
 
     const userList = data.rows.map((user) => {
