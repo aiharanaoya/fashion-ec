@@ -23,7 +23,7 @@ export default function Page() {
   const [address, setAddress] = useState('');
 
   /** 電話番号 */
-  const [tel, setTel] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
 
   /** メールアドレス */
   const [email, setEmail] = useState('');
@@ -47,8 +47,8 @@ export default function Page() {
   };
 
   /** 電話番号入力処理 */
-  const changeTel = (e: ChangeEvent<HTMLInputElement>) => {
-    setTel(e.target.value);
+  const changePhoneNumber = (e: ChangeEvent<HTMLInputElement>) => {
+    setPhoneNumber(e.target.value);
   };
 
   /** メールアドレス入力処理 */
@@ -74,7 +74,7 @@ export default function Page() {
             name={name}
             postalCode={postalCode}
             address={address}
-            tel={tel}
+            phoneNumber={phoneNumber}
             email={email}
             password={password}
             setIsConfirm={setIsConfirm}
@@ -85,13 +85,13 @@ export default function Page() {
             name={name}
             postalCode={postalCode}
             address={address}
-            tel={tel}
+            phoneNumber={phoneNumber}
             email={email}
             password={password}
             changeName={changeName}
             changePostalCode={changePostalCode}
             changeAddress={changeAddress}
-            changeTel={changeTel}
+            changePhoneNumber={changePhoneNumber}
             changeEmail={changeEmail}
             changePassword={changePassword}
             setIsConfirm={setIsConfirm}

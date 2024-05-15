@@ -14,7 +14,7 @@ type Props = {
   /** 住所 */
   address: string;
   /** 電話番号 */
-  tel: string;
+  phoneNumber: string;
   /** メールアドレス */
   email: string;
   /** パスワード */
@@ -32,7 +32,7 @@ export const SignUpConfirm: FC<Props> = ({
   name,
   postalCode,
   address,
-  tel,
+  phoneNumber,
   email,
   password,
   setIsConfirm,
@@ -45,7 +45,7 @@ export const SignUpConfirm: FC<Props> = ({
         <ConfirmText labelText="名前" valueText={name} />
         <ConfirmText labelText="郵便番号" valueText={postalCode} />
         <ConfirmText labelText="住所" valueText={address} />
-        <ConfirmText labelText="電話番号" valueText={tel} />
+        <ConfirmText labelText="電話番号" valueText={phoneNumber} />
         <ConfirmText labelText="メールアドレス" valueText={email} />
         <ConfirmText labelText="パスワード" valueText={password} />
       </div>

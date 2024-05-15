@@ -14,7 +14,7 @@ type Props = {
   /** 住所 */
   address: string;
   /** 電話番号 */
-  tel: string;
+  phoneNumber: string;
   /** メールアドレス */
   email: string;
   /** パスワード */
@@ -26,7 +26,7 @@ type Props = {
   /** 住所入力処理 */
   changeAddress: (e: ChangeEvent<HTMLInputElement>) => void;
   /** 電話番号入力処理 */
-  changeTel: (e: ChangeEvent<HTMLInputElement>) => void;
+  changePhoneNumber: (e: ChangeEvent<HTMLInputElement>) => void;
   /** メールアドレス入力処理 */
   changeEmail: (e: ChangeEvent<HTMLInputElement>) => void;
   /** パスワード入力処理 */
@@ -42,13 +42,13 @@ export const SignUpForm: FC<Props> = ({
   name,
   postalCode,
   address,
-  tel,
+  phoneNumber,
   email,
   password,
   changeName,
   changePostalCode,
   changeAddress,
-  changeTel,
+  changePhoneNumber,
   changeEmail,
   changePassword,
   setIsConfirm
@@ -90,7 +90,13 @@ export const SignUpForm: FC<Props> = ({
           onChange={changeAddress}
           id={addressId}
         />
-        <FormText labelText="電話番号" value={tel} onChange={changeTel} type="tel" id={telId} />
+        <FormText
+          labelText="電話番号"
+          value={phoneNumber}
+          onChange={changePhoneNumber}
+          type="phoneNumber"
+          id={telId}
+        />
         <FormText
           required
           labelText="メールアドレス"
