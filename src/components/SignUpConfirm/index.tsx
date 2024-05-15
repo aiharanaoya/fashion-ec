@@ -10,11 +10,11 @@ type Props = {
   /** 名前 */
   name: string;
   /** 郵便番号 */
-  zipCode: string;
+  postalCode: string;
   /** 住所 */
   address: string;
   /** 電話番号 */
-  tel: string;
+  phoneNumber: string;
   /** メールアドレス */
   email: string;
   /** パスワード */
@@ -30,9 +30,9 @@ type Props = {
  */
 export const SignUpConfirm: FC<Props> = ({
   name,
-  zipCode,
+  postalCode,
   address,
-  tel,
+  phoneNumber,
   email,
   password,
   setIsConfirm,
@@ -43,9 +43,9 @@ export const SignUpConfirm: FC<Props> = ({
       <H2 text="新規会員登録確認" />
       <div className="flex flex-col gap-y-6">
         <ConfirmText labelText="名前" valueText={name} />
-        <ConfirmText labelText="郵便番号" valueText={zipCode} />
+        <ConfirmText labelText="郵便番号" valueText={postalCode} />
         <ConfirmText labelText="住所" valueText={address} />
-        <ConfirmText labelText="電話番号" valueText={tel} />
+        <ConfirmText labelText="電話番号" valueText={phoneNumber} />
         <ConfirmText labelText="メールアドレス" valueText={email} />
         <ConfirmText labelText="パスワード" valueText={password} />
       </div>

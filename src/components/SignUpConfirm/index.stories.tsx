@@ -9,9 +9,9 @@ export default {
   component: SignUpConfirm,
   args: {
     name: 'name',
-    zipCode: 'zipCode',
+    postalCode: 'postalCode',
     address: 'address',
-    tel: 'tel',
+    phoneNumber: 'phoneNumber',
     email: 'email',
     password: 'password',
     setIsConfirm: () => {}
