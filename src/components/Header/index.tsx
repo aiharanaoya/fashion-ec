@@ -5,6 +5,8 @@ import Link from 'next/link';
 import { ChangeEvent, FC, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 
+import { logout } from '@/auth/action';
+import { Button } from '@/components/Button';
 import { FormSearch } from '@/components/FormSearch';
 import { IconLinkButton } from '@/components/IconLinkButton';
 import { LinkButton } from '@/components/LinkButton';
@@ -41,6 +43,9 @@ export const Header: FC<Props> = ({ isLogin = false, isOnlyLogo = false }) => {
             <IconLinkButton href="/">
               <UserIcon className="w-6" />
             </IconLinkButton>
+            <Button isPrimary onClick={() => logout()}>
+              ログアウト
+            </Button>
           </>
         ) : (
           <LinkButton isPrimary href="/login">
