@@ -5,12 +5,16 @@ import Link from 'next/link';
 import { ChangeEvent, FC, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 
+import { logout } from '@/auth/action';
+import { Button } from '@/components/Button';
 import { FormSearch } from '@/components/FormSearch';
 import { IconLinkButton } from '@/components/IconLinkButton';
 import { LinkButton } from '@/components/LinkButton';
 import { Logo } from '@/components/Logo';
 
 type Props = {
+  /** ログイン状態か */
+  isLogin?: boolean;
   /** ロゴのみ表示するか */
   isOnlyLogo?: boolean;
 };
@@ -18,10 +22,7 @@ type Props = {
 /**
  * ヘッダー
  */
-export const Header: FC<Props> = ({ isOnlyLogo = false }) => {
-  /** ログイン状態 */
-  const isLogin = false;
-
+export const Header: FC<Props> = ({ isLogin = false, isOnlyLogo = false }) => {
   /** 検索ワード */
   const [searchValue, setSearchValue] = useState('');
 
@@ -42,6 +43,9 @@ export const Header: FC<Props> = ({ isOnlyLogo = false }) => {
             <IconLinkButton href="/">
               <UserIcon className="w-6" />
             </IconLinkButton>
+            <Button isPrimary onClick={() => logout()}>
+              ログアウト
+            </Button>
           </>
         ) : (
           <LinkButton isPrimary href="/login">
