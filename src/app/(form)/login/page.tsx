@@ -39,6 +39,7 @@ export default function Page() {
           <H2 text="ログイン" />
           <div className="flex flex-col gap-y-6">
             <FormText
+              required
               labelText="メールアドレス"
               value={emailValue}
               onChange={changeEmailValue}
@@ -46,6 +47,7 @@ export default function Page() {
               id={emailId}
             />
             <FormText
+              required
               labelText="パスワード"
               value={passwordValue}
               onChange={changePasswordValue}
