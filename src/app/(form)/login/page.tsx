@@ -22,6 +22,9 @@ export default function Page() {
   /** パスワード入力値 */
   const [passwordValue, setPasswordValue] = useState('');
 
+  /** フォーム送信でエラーが発生したか */
+  const [isSubmitError, setIsSubmitError] = useState(false);
+
   /** メールアドレス入力処理 */
   const changeEmailValue = (e: ChangeEvent<HTMLInputElement>) => {
     setEmailValue(e.target.value);
@@ -32,11 +35,23 @@ export default function Page() {
     setPasswordValue(e.target.value);
   };
 
+  /** フォーム送信処理 */
+  const handleSubmit = async () => {
+    try {
+      await login(emailValue, passwordValue);
+    } catch (error) {
+      setIsSubmitError(true);
+    }
+  };
+
   return (
     <div className="flex h-full w-full flex-col items-center gap-y-12 px-4 py-8 md:py-12">
       <ContentCard>
-        <form className="flex flex-col gap-y-8" action={() => login(emailValue, passwordValue)}>
+        <form className="flex flex-col gap-y-8" action={handleSubmit}>
           <H2 text="ログイン" />
+          {isSubmitError && (
+            <p className="text-red-500 ">メールアドレスまたはパスワードが違います</p>
+          )}
           <div className="flex flex-col gap-y-6">
             <FormText
               required
