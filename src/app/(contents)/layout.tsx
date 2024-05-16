@@ -1,12 +1,15 @@
 import { ReactNode } from 'react';
 
+import { auth } from '@/auth/config';
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
 
-export default function Layout({ children }: { children: ReactNode }) {
+export default async function Layout({ children }: { children: ReactNode }) {
+  const session = await auth();
+
   return (
     <>
-      <Header />
+      <Header isLogin={!!session} />
       <main className="grow">{children}</main>
       <Footer />
     </>

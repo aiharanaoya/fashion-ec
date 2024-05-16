@@ -11,6 +11,8 @@ import { LinkButton } from '@/components/LinkButton';
 import { Logo } from '@/components/Logo';
 
 type Props = {
+  /** ログイン状態か */
+  isLogin?: boolean;
   /** ロゴのみ表示するか */
   isOnlyLogo?: boolean;
 };
@@ -18,10 +20,7 @@ type Props = {
 /**
  * ヘッダー
  */
-export const Header: FC<Props> = ({ isOnlyLogo = false }) => {
-  /** ログイン状態 */
-  const isLogin = false;
-
+export const Header: FC<Props> = ({ isLogin = false, isOnlyLogo = false }) => {
   /** 検索ワード */
   const [searchValue, setSearchValue] = useState('');
 
