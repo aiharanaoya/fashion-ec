@@ -37,6 +37,7 @@ export default function Page() {
 
   /** フォーム送信処理 */
   const handleSubmit = async () => {
+    setIsSubmitError(false);
     try {
       await login(emailValue, passwordValue);
     } catch (error) {
