@@ -6,7 +6,7 @@ import { H1 } from '@/components/H1';
 import { ListItem } from '@/types/item';
 
 /** ダミー一覧アイテム */
-export const dummyListItem: ListItem = {
+const dummyListItem: ListItem = {
   id: '1',
   image: {
     src: '/blue-shirt.webp',
