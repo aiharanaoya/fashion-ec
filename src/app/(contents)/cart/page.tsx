@@ -3,7 +3,18 @@
 import { Button } from '@/components/Button';
 import { CartItem } from '@/components/CartItem';
 import { H1 } from '@/components/H1';
-import { dummyListItem } from '@/constants/dummy';
+import { ListItem } from '@/types/item';
+
+/** ダミー一覧アイテム */
+const dummyListItem: ListItem = {
+  id: '1',
+  image: {
+    src: '/blue-shirt.webp',
+    alt: ''
+  },
+  name: 'アイテム名アイテム名アイテム名',
+  price: 5000
+};
 
 export default function Page() {
   /** ダミーアイテムリスト */
