@@ -1,15 +1,13 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
 import { useState, ChangeEvent } from 'react';
 
+import { createUser } from '@/actions/user';
 import { ContentCard } from '@/components/ContentCard';
 import { SignUpConfirm } from '@/components/SignUpConfirm';
 import { SignUpForm } from '@/components/SignUpForm';
 
 export default function Page() {
-  const router = useRouter();
-
   /** 確認画面か */
   const [isConfirm, setIsConfirm] = useState(false);
 
@@ -61,9 +59,13 @@ export default function Page() {
     setPassword(e.target.value);
   };
 
-  /** 送信処理 */
-  const onSubmit = () => {
-    router.push('/');
+  /** フォーム送信処理 */
+  const handleSubmit = async () => {
+    try {
+      await createUser({ name, postalCode, address, phoneNumber, email, password });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -78,7 +80,7 @@ export default function Page() {
             email={email}
             password={password}
             setIsConfirm={setIsConfirm}
-            onSubmit={onSubmit}
+            onSubmit={handleSubmit}
           />
         ) : (
           <SignUpForm
