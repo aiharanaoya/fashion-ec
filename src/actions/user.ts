@@ -1,6 +1,7 @@
 'use server';
 
 import { sql } from '@vercel/postgres';
+import { hash } from 'bcrypt';
 import { unstable_noStore as noStore } from 'next/cache';
 import { redirect } from 'next/navigation';
 
@@ -65,10 +66,13 @@ export const fetchUserByEmail = async (email: string): Promise<User> => {
 export const createUser = async (user: Omit<User, 'id'>): Promise<void> => {
   const { name, postalCode, address, phoneNumber, email, password } = user;
 
+  const hashedPassword = await hash(password, 10);
+
   try {
     await sql`
       INSERT INTO users (name, postal_code, address, phone_number, email, password)
-      VALUES (${name}, ${postalCode}, ${address}, ${phoneNumber}, ${email}, ${password})
+      VALUES (${name}, ${postalCode}, ${address}, ${phoneNumber}, ${email}, ${hashedPassword})
+      ON CONFLICT (id) DO NOTHING;
     `;
   } catch (error) {
     throw new Error('ユーザー登録の呼び出しでエラーが発生しました');
