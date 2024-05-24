@@ -1,5 +1,6 @@
 'use client';
 
+import { redirect } from 'next/navigation';
 import { ChangeEvent, useId, useState } from 'react';
 
 import { login } from '@/auth/action';
@@ -40,8 +41,11 @@ export default function Page() {
     setIsSubmitError(false);
     try {
       await login(emailValue, passwordValue);
+      redirect('/');
     } catch (error) {
       setIsSubmitError(true);
+      console.log(error);
+      throw new Error('ログインでエラーが発生しました');
     }
   };
 

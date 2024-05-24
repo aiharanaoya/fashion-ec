@@ -3,7 +3,6 @@
 import { sql } from '@vercel/postgres';
 import { hash } from 'bcrypt';
 import { unstable_noStore as noStore } from 'next/cache';
-import { redirect } from 'next/navigation';
 
 import { User } from '@/types/user';
 
@@ -75,8 +74,7 @@ export const createUser = async (user: Omit<User, 'id'>): Promise<void> => {
       ON CONFLICT (id) DO NOTHING;
     `;
   } catch (error) {
+    console.error(error);
     throw new Error('ユーザー登録の呼び出しでエラーが発生しました');
   }
-
-  redirect('/');
 };
