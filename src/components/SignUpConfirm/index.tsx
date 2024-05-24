@@ -21,7 +21,7 @@ type Props = {
   password: string;
   /** 確認画面かの更新関数 */
   setIsConfirm: Dispatch<SetStateAction<boolean>>;
-  /** 送信処理 */
+  /** フォーム送信処理 */
   onSubmit: () => void;
 };
 
@@ -39,7 +39,7 @@ export const SignUpConfirm: FC<Props> = ({
   onSubmit
 }: Props) => {
   return (
-    <form className="flex flex-col gap-y-8" onSubmit={onSubmit}>
+    <form className="flex flex-col gap-y-8" action={onSubmit}>
       <H2 text="新規会員登録確認" />
       <div className="flex flex-col gap-y-6">
         <ConfirmText labelText="名前" valueText={name} />
