@@ -64,11 +64,11 @@ export default function Page() {
   const handleSubmit = async () => {
     try {
       await createUser({ name, postalCode, address, phoneNumber, email, password });
-      redirect('/');
     } catch (error) {
       console.log(error);
       throw new Error('会員登録でエラーが発生しました');
     }
+    redirect('/');
   };
 
   return (
