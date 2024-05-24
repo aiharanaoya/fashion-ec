@@ -4,6 +4,7 @@ import { redirect } from 'next/navigation';
 import { useState, ChangeEvent } from 'react';
 
 import { createUser } from '@/actions/user';
+import { login } from '@/auth/action';
 import { ContentCard } from '@/components/ContentCard';
 import { SignUpConfirm } from '@/components/SignUpConfirm';
 import { SignUpForm } from '@/components/SignUpForm';
@@ -64,6 +65,7 @@ export default function Page() {
   const handleSubmit = async () => {
     try {
       await createUser({ name, postalCode, address, phoneNumber, email, password });
+      await login(email, password);
     } catch (error) {
       console.log(error);
       throw new Error('会員登録でエラーが発生しました');
