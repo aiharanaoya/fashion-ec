@@ -19,7 +19,7 @@
   "dependencies": {
     "@heroicons/react": "^2.0.18",
     "@storybook/test": "^8.0.4",
-    "@vercel/postgres": "^0.8.0",
+    "@vercel/postgres": "^0.10.0",
     "bcrypt": "^5.1.1",
     "embla-carousel-autoplay": "^8.0.1",
     "embla-carousel-react": "^8.0.1",
