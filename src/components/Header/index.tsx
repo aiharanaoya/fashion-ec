@@ -81,9 +81,9 @@ export const Header: FC<Props> = ({ isLogin = false, isOnlyLogo = false }) => {
       </header>
       <header
         className="
-        sticky top-0 z-10 flex h-full w-full flex-col items-center
-        justify-between gap-y-2
-        border-b border-slate-300 bg-white px-8 py-2 md:hidden
+        sticky top-0 z-10 flex size-full flex-col items-center justify-between
+        gap-y-2 border-b
+        border-slate-300 bg-white px-8 py-2 md:hidden
       "
       >
         <div className="flex w-full items-center justify-between">

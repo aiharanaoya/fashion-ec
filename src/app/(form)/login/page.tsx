@@ -50,7 +50,7 @@ export default function Page() {
   };
 
   return (
-    <div className="flex h-full w-full flex-col items-center gap-y-12 px-4 py-8 md:py-12">
+    <div className="flex size-full flex-col items-center gap-y-12 px-4 py-8 md:py-12">
       <ContentCard>
         <form className="flex flex-col gap-y-8" action={handleSubmit}>
           <H2 text="ログイン" />
@@ -78,7 +78,7 @@ export default function Page() {
           <Button isPrimary>ログイン</Button>
         </form>
       </ContentCard>
-      <div className="flex h-full w-full max-w-xl flex-col gap-y-6 px-10 md:px-16">
+      <div className="flex size-full max-w-xl flex-col gap-y-6 px-10 md:px-16">
         <H2 text="初めてご利用の方" />
         <LinkButton href="/sign-up">新規会員登録</LinkButton>
       </div>

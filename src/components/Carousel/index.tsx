@@ -44,7 +44,7 @@ export const Carousel: FC<Props> = ({ images }: Props) => {
   });
 
   return (
-    <div className="flex h-full w-full flex-col gap-y-4">
+    <div className="flex size-full flex-col gap-y-4">
       <div className="relative overflow-hidden" ref={emblaRef}>
         <ul className="flex gap-x-4 pl-4">
           {images.map((image, index) => (
@@ -61,9 +61,9 @@ export const Carousel: FC<Props> = ({ images }: Props) => {
         </ul>
         <button
           className="
-          absolute inset-y-0 left-[10%] my-auto hidden h-12 w-12 rounded-full
-          bg-white font-bold text-slate-400 shadow duration-300
-          hover:h-14 hover:w-14 md:block
+          absolute inset-y-0 left-[10%] my-auto hidden size-12 rounded-full bg-white
+          font-bold text-slate-400 shadow duration-300 hover:size-14
+          md:block
         "
           onClick={handleClickPrev}
         >
@@ -71,9 +71,9 @@ export const Carousel: FC<Props> = ({ images }: Props) => {
         </button>
         <button
           className="
-          absolute inset-y-0 right-[10%] my-auto hidden h-12 w-12 rounded-full
-        bg-white font-bold text-slate-400 shadow duration-300
-          hover:h-14 hover:w-14 md:block
+          absolute inset-y-0 right-[10%] my-auto hidden size-12 rounded-full bg-white
+        font-bold text-slate-400 shadow duration-300 hover:size-14
+          md:block
         "
           onClick={handleClickNext}
         >
@@ -82,7 +82,7 @@ export const Carousel: FC<Props> = ({ images }: Props) => {
       </div>
       <ul className="flex justify-center gap-x-3">
         {images.map((_, index) => (
-          <li className="h-3 w-3" key={`carousel-select-button-${index}`}>
+          <li className="size-3" key={`carousel-select-button-${index}`}>
             <button
               className={twMerge(
                 `h-full w-full rounded-full bg-slate-200`,

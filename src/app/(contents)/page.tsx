@@ -26,7 +26,7 @@ export default async function Page() {
   return (
     <div className="flex flex-col items-center gap-y-16 pb-16 pt-8">
       <Carousel images={carouselImageList} />
-      <div className="flex h-full w-full max-w-5xl flex-col gap-y-16 px-4">
+      <div className="flex size-full max-w-5xl flex-col gap-y-16 px-4">
         <ItemSection headlineText="新着アイテム" itemList={itemList} />
         <ItemSection headlineText="おすすめアイテム" itemList={itemList} />
       </div>

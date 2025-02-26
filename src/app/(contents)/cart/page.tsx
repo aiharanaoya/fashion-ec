@@ -22,11 +22,11 @@ export default function Page() {
 
   return (
     <div className="flex justify-center pb-16 pt-8">
-      <div className="flex h-full w-full max-w-5xl flex-col gap-y-8 px-4">
+      <div className="flex size-full max-w-5xl flex-col gap-y-8 px-4">
         <H1 text="カート" />
-        <div className="flex h-full w-full flex-col gap-y-12 md:flex-row md:gap-x-12">
-          <div className="flex h-full w-full flex-[2] flex-col items-end gap-y-4">
-            <ul className="flex h-full w-full flex-col gap-y-4">
+        <div className="flex size-full flex-col gap-y-12 md:flex-row md:gap-x-12">
+          <div className="flex size-full flex-[2] flex-col items-end gap-y-4">
+            <ul className="flex size-full flex-col gap-y-4">
               {dummyItemList.map((item) => (
                 <li key={item.id} className="border-b border-slate-300 pb-4">
                   <CartItem
@@ -43,7 +43,7 @@ export default function Page() {
             </ul>
             <p className="text-xl font-bold">商品合計 ¥20000</p>
           </div>
-          <div className="h-full w-full flex-1 rounded-2xl bg-slate-100 p-10 shadow-lg">
+          <div className="size-full flex-1 rounded-2xl bg-slate-100 p-10 shadow-lg">
             <Button isPrimary onClick={() => {}}>
               レジへ進む
             </Button>
