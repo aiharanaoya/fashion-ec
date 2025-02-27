@@ -15,8 +15,7 @@ export const IconLinkButton: FC<Props> = ({ children, ...rest }: Props) => {
     <Link
       {...rest}
       className="
-        h-fit w-fit rounded-full p-3 duration-300
-        hover:bg-slate-200
+        size-fit rounded-full p-3 duration-300 hover:bg-slate-200
       "
     >
       {children}

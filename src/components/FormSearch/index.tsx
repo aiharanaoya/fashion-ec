@@ -18,12 +18,12 @@ type Props = {
  */
 export const FormSearch: FC<Props> = ({ href, value, onChangeForm }) => {
   return (
-    <div className="relative flex h-full w-full items-center">
+    <div className="relative flex size-full items-center">
       <InputText value={value} placeholder="キーワードで検索" onChange={onChangeForm} />
       <Link
         href={href}
-        className="absolute right-1 h-fit w-fit rounded-full
-        p-3 duration-300 hover:bg-slate-200"
+        className="absolute right-1 size-fit rounded-full p-3
+        duration-300 hover:bg-slate-200"
       >
         <MagnifyingGlassIcon className="w-6" />
       </Link>

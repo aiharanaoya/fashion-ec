@@ -14,7 +14,7 @@ export default async function Page({
 
   return (
     <div className="flex justify-center py-16 pt-8">
-      <div className="h-full w-full max-w-5xl px-4">
+      <div className="size-full max-w-5xl px-4">
         <ItemSection
           headlineText={query ? `${query}の検索結果` : '全てのアイテム'}
           itemList={itemList}
